@@ -1,0 +1,2828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIYUM | Crunch Revolution - Premium Plant-Based Snacks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Fredoka+One&family=Montserrat:wght@800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik+Glitch&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #19dc7e;
+            --primary-dark: #14b86e;
+            --secondary: #FF6B6B;
+            --accent: #FFD166;
+            --dark: #1a1a2e;
+            --light: #FFFBEB;
+            --gradient: linear-gradient(135deg, #19dc7e 0%, #00ff88 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        
+        * {
+            font-family: 'Space Grotesk', 'Poppins', sans-serif;
+        }
+        
+        .logo-font {
+            font-family: 'Fredoka One', cursive;
+        }
+        
+        .title-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .fun-font {
+            font-family: 'Bungee', cursive;
+        }
+        
+        .glitch-font {
+            font-family: 'Rubik Glitch', cursive;
+        }
+        
+        /* Advanced 3D Effects */
+        .card-3d {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-3d:hover {
+            transform: rotateY(15deg) rotateX(5deg) translateY(-10px);
+        }
+        
+        .card-inner {
+            transform: translateZ(20px);
+        }
+        
+        /* Liquid Gradient Animation */
+        .liquid-bg {
+            background: linear-gradient(45deg, var(--primary), var(--accent), var(--secondary), var(--primary));
+            background-size: 400% 400%;
+            animation: liquidAnimation 8s ease infinite;
+        }
+        
+        @keyframes liquidAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Glitch Effect */
+        .glitch-text {
+            position: relative;
+            color: white;
+        }
+        
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00ff;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: -2px 0 #00ffff;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        
+        /* Particle Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(25, 220, 126, 0.2);
+            border-radius: 50%;
+            animation: float-particle linear infinite;
+        }
+        
+        @keyframes float-particle {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
+        }
+        
+        /* Morphing Shape */
+        .morphing-shape {
+            animation: morph 20s ease-in-out infinite;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+        
+        /* Neon Glow */
+        .neon-glow {
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px var(--primary),
+                0 0 40px var(--primary),
+                0 0 80px var(--primary);
+            animation: neon-flicker 3s infinite alternate;
+        }
+        
+        @keyframes neon-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 20px var(--primary),
+                    0 0 40px var(--primary),
+                    0 0 80px var(--primary);
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+        
+        /* Scroll-triggered Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px) rotateX(45deg);
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+       
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient);
+            border-radius: 10px;
+            border: 3px solid var(--dark);
+        }
+        
+        /* Button Effects */
+        .btn-holographic {
+            background: linear-gradient(45deg, transparent 50%, rgba(255,255,255,0.1) 50%);
+            background-size: 200% 200%;
+            background-position: 0% 0%;
+            transition: background-position 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-holographic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-holographic:hover::before {
+            left: 100%;
+        }
+        
+        .btn-holographic:hover {
+            background-position: 100% 100%;
+            transform: translateY(-2px);
+        }
+        
+        /* Product Card Hover */
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+            z-index: 1;
+        }
+        
+        .product-card:hover::before {
+            left: 100%;
+        }
+        
+        /* Loading Animation */
+        .loading-ring {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .loading-ring:after {
+            content: " ";
+            display: block;
+            width: 64px;
+            height: 64px;
+            margin: 8px;
+            border-radius: 50%;
+            border: 6px solid var(--primary);
+            border-color: var(--primary) transparent var(--primary) transparent;
+            animation: loading-ring 1.2s linear infinite;
+        }
+        
+        @keyframes loading-ring {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Tilt Effect */
+        .tilt-element {
+            transform-style: preserve-3d;
+            transition: transform 0.1s;
+        }
+        
+        /* Confetti Animation */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            animation: confetti-fall 5s linear infinite;
+        }
+        
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100px) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(720deg); }
+        }
+        
+        /* Glass Morphism */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Shimmer Effect */
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        /* Custom Cursor */
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.3s ease;
+        }
+        
+        .cursor-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+        }
+        
+        /* Stock Indicator */
+        .stock-indicator-dark {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .stock-fill-dark {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), #00ff88);
+            border-radius: 3px;
+            transition: width 1s ease;
+        }
+        
+        .stock-pulse-dark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        /* Notification System */
+        .notification-dark {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(25, 220, 126, 0.2);
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Image Zoom */
+        .image-zoom-dark {
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        
+        .image-zoom-dark img {
+            transition: transform 0.6s ease;
+        }
+        
+       
+        
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+            color: black;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(25, 220, 126, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: black;
+            transform: translateY(-2px);
+        }
+        
+        .btn-action {
+            background: rgba(25, 220, 126, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 1px solid var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-action:hover {
+            background: var(--primary);
+            color: black;
+        }
+        
+        .btn-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-icon:hover {
+            background: var(--primary);
+            color: black;
+            transform: scale(1.1);
+        }
+        
+        /* Badge Styles */
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .discount-badge {
+            background: var(--secondary);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        /* Quick Action Buttons */
+        .quick-action-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.8);
+            border: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-action-btn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+        
+        /* Add to Cart Button */
+        .btn-add-to-cart {
+            background: rgba(25, 220, 126, 0.2);
+            color: white;
+            padding: 12px;
+            border-radius: 25px;
+            border: 1px solid var(--primary);
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-add-to-cart:hover {
+            background: var(--primary);
+            color: black;
+        }
+        
+        /* Quick Buy Button */
+        .btn-quick-buy {
+            width: 48px;
+            height: 48px;
+            border-radius: 25px;
+            background: var(--secondary);
+            border: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-quick-buy:hover {
+            background: #ff5252;
+            transform: scale(1.1);
+        }
+        
+        /* Navigation Links */
+        .nav-link {
+            text-decoration: none;
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        /* Icon Buttons */
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .icon-btn:hover {
+            background: var(--primary);
+            color: black;
+            transform: scale(1.1);
+        }
+        
+        /* Category Filter */
+        .category-filter {
+            padding: 8px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category-filter.active {
+            background: var(--primary);
+            color: black;
+            border-color: var(--primary);
+        }
+        
+        .category-filter:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Feature Card */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(25, 220, 126, 0.1);
+        }
+        
+        /* Testimonial Styles */
+        .testimonial-carousel {
+            position: relative;
+            min-height: 300px;
+        }
+        
+        .testimonial-slide {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.5s ease;
+        }
+        
+        .testimonial-slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .carousel-nav:hover {
+            background: var(--primary);
+            color: black;
+        }
+        
+        .carousel-nav.prev {
+            left: -25px;
+        }
+        
+        .carousel-nav.next {
+            right: -25px;
+        }
+        
+        /* CTA Buttons */
+        .btn-cta-primary {
+            background: linear-gradient(45deg, var(--primary), #00ff88);
+            color: black;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(25, 220, 126, 0.5);
+        }
+        
+        .btn-cta-secondary {
+            background: transparent;
+            color: white;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: bold;
+            border: 2px solid white;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-cta-secondary:hover {
+            background: white;
+            color: black;
+        }
+        
+        /* Social Buttons */
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn:hover {
+            background: var(--primary);
+            color: black;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer Links */
+        .footer-link {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        /* Flavor Option */
+        .flavor-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .flavor-option.active {
+            border-color: var(--primary);
+            background: rgba(25, 220, 126, 0.1);
+        }
+        
+        .flavor-option:hover:not(.active) {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Boost Option */
+        .boost-option {
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .boost-option.active {
+            background: var(--primary);
+            color: black;
+            border-color: var(--primary);
+        }
+        
+        .boost-option:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Size Option */
+        .size-option {
+            padding: 8px 16px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .size-option.active {
+            background: var(--primary);
+            color: black;
+            border-color: var(--primary);
+        }
+        
+        .size-option:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Mobile Menu Styles */
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .mobile-nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .mobile-nav-link.active {
+            background: rgba(25, 220, 126, 0.2);
+            color: #19dc7e;
+            border-left: 3px solid #19dc7e;
+        }
+        
+        .mobile-sub-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            color: rgba(255, 255, 255, 0.7);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        .mobile-sub-link:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        /* Mobile Category Accordion */
+        .mobile-category-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-category-content.active {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+        
+        .mobile-category-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-category-arrow.active {
+            transform: rotate(180deg);
+        }
+        
+        /* Mobile Menu Animations */
+        .mobile-menu-enter {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        
+        .mobile-menu-enter-active {
+            opacity: 1;
+            transform: translateX(0);
+            transition: opacity 300ms, transform 300ms;
+        }
+        
+        .mobile-menu-exit {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .mobile-menu-exit-active {
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 300ms, transform 300ms;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .title-font {
+                font-size: 2.5rem;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 12px 24px;
+            }
+            
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .carousel-nav.prev {
+                left: 10px;
+            }
+            
+            .carousel-nav.next {
+                right: 10px;
+            }
+            
+            /* Mobile Responsive Adjustments */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .icon-btn {
+                width: 36px;
+                height: 36px;
+            }
+            
+            #cartCount {
+                font-size: 10px;
+                width: 16px;
+                height: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-font {
+                font-size: 1.5rem;
+            }
+            
+            .action-buttons {
+                gap: 0.5rem;
+            }
+        }
+        
+        /* Smooth Transitions */
+        * {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+    <!-- Notification Container -->
+    <div id="notificationContainer" class="fixed top-4 right-4 z-50 space-y-2"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
+    
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+    
+  
+    
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#19dc7e] via-[#FFD166] to-[#FF6B6B] z-40 transition-all duration-200" id="progressBar"></div>
+    
+    <!-- Announcement Bar -->
+    <div class="announcement-bar bg-gradient-to-r from-[#19dc7e] to-[#FFD166] py-3 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-center gap-8">
+                <div class="flex items-center gap-3 animate-pulse">
+                    <span class="fun-font text-sm">🚀 NEW LAUNCH ALERT!</span>
+                    <span class="text-black font-bold">SPACE BANANA BLAST</span>
+                </div>
+                <div class="hidden md:flex items-center gap-3">
+                    <span class="text-black font-bold">🔥 LIMITED TIME: 40% OFF</span>
+                    <button class="bg-black text-white px-4 py-1 rounded-full text-xs font-bold hover:scale-105 transition-transform">
+                        SHOP NOW
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-1/2 right-4 -translate-y-1/2">
+            <button onclick="closeAnnouncement()" class="text-black hover:scale-110 transition-transform">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Ultimate Navigation -->
+    <nav class="sticky top-0 z-30 glass-effect border-b border-white/10">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo with Animation -->
+                <a href="#" class="logo-font text-3xl relative group">
+                                      <img class="text-white relative z-10" src="singlelogo.png" width="100" />
+
+                    <span class="absolute -inset-2 bg-[#19dc7e] blur-xl opacity-20 group-hover:opacity-40 transition-opacity"></span>
+                    <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#19dc7e] group-hover:w-full transition-all duration-300"></div>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#" class="nav-link group relative">
+                        <span class="text-white/80 group-hover:text-white transition-colors">SHOP</span>
+                        <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#19dc7e] group-hover:w-full transition-all duration-300"></div>
+                    </a>
+                    
+                    <!-- Mega Menu -->
+                    <div class="group relative">
+                        <button class="nav-link flex items-center gap-2 group">
+                            <span class="text-white/80 group-hover:text-white transition-colors">CATEGORIES</span>
+                            <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        
+                        <div class="absolute top-full left-0 w-screen max-w-4xl bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-4 group-hover:translate-y-0">
+                            <div class="grid grid-cols-3 gap-6">
+                                <div>
+                                    <h4 class="text-[#19dc7e] font-bold mb-3">FRUIT CHIPS</h4>
+                                    <div class="space-y-2">
+                                        <a href="#" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Apple Crisp</a>
+                                        <a href="#" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Banana Blast</a>
+                                        <a href="#" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Mango Tango</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-[#FFD166] font-bold mb-3">VEGGIE CRISPS</h4>
+                                    <div class="space-y-2">
+                                        <a href="#" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Kale Krunch</a>
+                                        <a href="#" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Sweet Potato</a>
+                                        <a href="#" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Beetroot Boost</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-[#FF6B6B] font-bold mb-3">SEASONAL</h4>
+                                    <div class="space-y-2">
+                                        <a href="#" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Winter Special</a>
+                                        <a href="#" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Summer Crunch</a>
+                                        <a href="#" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Festive Flavors</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="nav-link group relative">
+                        <span class="text-white/80 group-hover:text-white transition-colors">ABOUT</span>
+                        <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#19dc7e] group-hover:w-full transition-all duration-300"></div>
+                    </a>
+                    
+                    <a href="#" class="nav-link group relative">
+                        <span class="text-white/80 group-hover:text-white transition-colors">BLOG</span>
+                        <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#19dc7e] group-hover:w-full transition-all duration-300"></div>
+                    </a>
+                </div>
+                
+                <!-- Action Icons -->
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <!-- Search Button - Hidden on mobile -->
+                    <button class="icon-btn group hidden sm:flex" onclick="openSearch()">
+                        <i class="fas fa-search group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    
+                    <!-- Account Dropdown - Hidden on mobile -->
+                    <div class="relative group hidden md:block">
+                        <button class="icon-btn group">
+                            <i class="fas fa-user group-hover:text-[#19dc7e] transition-colors"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div class="absolute top-full right-0 mt-2 w-48 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-4 group-hover:translate-y-0 z-40">
+                            <div class="px-4 py-3 border-b border-white/10">
+                                <div class="font-bold text-white">Welcome!</div>
+                                <div class="text-sm text-white/60">Sign in to your account</div>
+                            </div>
+                            
+                            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 transition-colors">
+                                <i class="fas fa-sign-in-alt text-[#19dc7e]"></i>
+                                <span>Sign In</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 transition-colors">
+                                <i class="fas fa-user-plus text-[#19dc7e]"></i>
+                                <span>Create Account</span>
+                            </a>
+                            
+                            <div class="border-t border-white/10 my-2"></div>
+                            
+                            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 transition-colors">
+                                <i class="fas fa-shopping-bag text-[#FFD166]"></i>
+                                <span>My Orders</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 transition-colors">
+                                <i class="fas fa-heart text-[#FF6B6B]"></i>
+                                <span>Wishlist</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Cart - Always visible -->
+                    <button class="icon-btn group relative" onclick="openCart()">
+                        <i class="fas fa-shopping-bag group-hover:scale-110 transition-transform"></i>
+                        <span id="cartCount" class="absolute -top-1 -right-1 bg-[#19dc7e] text-black text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center">5</span>
+                    </button>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="icon-btn lg:hidden" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Enhanced Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 hidden transition-all duration-300">
+        <div class="h-full flex flex-col">
+            <!-- Mobile Menu Header -->
+            <div class="p-4 border-b border-white/10">
+                <div class="flex justify-between items-center">
+                                       <img class="text-white relative z-10" src="singlelogo.png" width="100" />
+
+                    <button onclick="toggleMobileMenu()" class="icon-btn text-2xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <!-- Quick Actions in Mobile Header -->
+                <div class="flex items-center justify-between mt-4">
+                    <!-- Mobile Search -->
+                    <button onclick="openSearch(); toggleMobileMenu();" class="flex items-center gap-2 text-white/80 hover:text-white transition-colors w-full">
+                        <i class="fas fa-search"></i>
+                        <span>Search</span>
+                    </button>
+                    
+                    
+                    
+                   
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Content -->
+            <div class="flex-1 overflow-y-auto p-4">
+                <!-- Main Navigation -->
+                <nav class="space-y-1">
+                    <a href="#" class="mobile-nav-link active" onclick="toggleMobileMenu()">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    
+                    <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu(); scrollToProducts();">
+                        <i class="fas fa-store"></i>
+                        Shop All
+                    </a>
+                    
+                    <!-- Categories Accordion -->
+                    <div class="mobile-category">
+                        <button class="mobile-nav-link w-full text-left flex items-center justify-between" onclick="toggleMobileCategory()">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-th-large"></i>
+                                Categories
+                            </div>
+                            <i class="fas fa-chevron-down mobile-category-arrow"></i>
+                        </button>
+                        
+                        <div class="mobile-category-content">
+                            <div class="pl-10 space-y-1 mt-2">
+                                <a href="#" class="mobile-sub-link" onclick="filterProducts('fruit');">
+                                    <i class="fas fa-apple-alt text-[#19dc7e]"></i>
+                                    Fruit Chips
+                                </a>
+                                <a href="#" class="mobile-sub-link" onclick="filterProducts('veggie');">
+                                    <i class="fas fa-carrot text-[#FFD166]"></i>
+                                    Veggie Crisps
+                                </a>
+                                <a href="#" class="mobile-sub-link" onclick="filterProducts('spicy');">
+                                    <i class="fas fa-fire text-[#FF6B6B]"></i>
+                                    Spicy Range
+                                </a>
+                                <a href="#" class="mobile-sub-link" onclick="filterProducts('best');">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    Best Sellers
+                                </a>
+                                <a href="#" class="mobile-sub-link" onclick="filterProducts('limited');">
+                                    <i class="fas fa-bolt text-purple-400"></i>
+                                    Limited Edition
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                 
+                    
+                    
+                    
+                  
+                    
+                    <div class="border-t border-white/10 my-4"></div>
+                    
+                    <!-- Account Section -->
+                    <div class="mb-4">
+                        <div class="text-xs uppercase text-white/40 mb-2">Account</div>
+                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu(); openLoginModal();">
+                            <i class="fas fa-sign-in-alt text-[#19dc7e]"></i>
+                            Sign In
+                        </a>
+                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu(); openRegisterModal();">
+                            <i class="fas fa-user-plus text-[#19dc7e]"></i>
+                            Create Account
+                        </a>
+                        
+                    </div>
+                    
+                    <!-- Company Section -->
+                    <div class="mb-4">
+                        <div class="text-xs uppercase text-white/40 mb-2">Company</div>
+                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                            <i class="fas fa-info-circle"></i>
+                            About Us
+                        </a>
+                      
+                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                            <i class="fas fa-question-circle"></i>
+                            FAQ
+                        </a>
+                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                            <i class="fas fa-phone"></i>
+                            Contact
+                        </a>
+                    </div>
+                    
+                    <!-- Support Section -->
+                    <div class="mb-4">
+                        <div class="text-xs uppercase text-white/40 mb-2">Support</div>
+                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                            <i class="fas fa-shipping-fast"></i>
+                            Shipping Info
+                        </a>
+                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                            <i class="fas fa-exchange-alt"></i>
+                            Returns & Exchanges
+                        </a>
+                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                            <i class="fas fa-shield-alt"></i>
+                            Privacy Policy
+                        </a>
+                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                            <i class="fas fa-file-contract"></i>
+                            Terms of Service
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            
+           
+                
+                <div class="flex justify-center gap-4">
+                    <a href="#" class="text-white/60 hover:text-white">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#" class="text-white/60 hover:text-white">
+                        <i class="fab fa-facebook text-lg"></i>
+                    </a>
+                    <a href="#" class="text-white/60 hover:text-white">
+                        <i class="fab fa-twitter text-lg"></i>
+                    </a>
+                    <a href="#" class="text-white/60 hover:text-white">
+                        <i class="fab fa-tiktok text-lg"></i>
+                    </a>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- Search Modal -->
+    <div id="searchModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="glass-effect rounded-2xl w-full max-w-2xl shadow-2xl transform transition-all duration-300 scale-95 opacity-0" id="searchModalContent">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold text-white">Search Snacks</h3>
+                    <button onclick="closeSearch()" class="p-2 hover:bg-white/10 rounded-lg transition-colors">
+                        <i class="fas fa-times text-gray-400"></i>
+                    </button>
+                </div>
+                
+                <div class="relative mb-6">
+                    <input type="text" id="searchInput" placeholder="What flavor are you craving? Try 'banana', 'spicy', or 'veggie'..." 
+                           class="bg-black/50 border border-white/10 w-full px-6 py-4 rounded-xl text-lg focus:border-[#19dc7e] focus:outline-none text-white">
+                    <button onclick="performSearch()" class="absolute right-3 top-3 p-3 bg-[#19dc7e] text-black rounded-lg hover:bg-[#14b86e] transition-colors">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <!-- Recent Searches -->
+                <div class="mb-6">
+                    <h4 class="font-medium text-white mb-3">Recent Searches</h4>
+                    <div class="flex flex-wrap gap-2" id="recentSearches">
+                        <button onclick="searchKeyword('banana')" class="px-4 py-2 bg-white/10 text-white rounded-full hover:bg-[#19dc7e] hover:text-black transition-colors">
+                            Banana Chips
+                        </button>
+                        <button onclick="searchKeyword('spicy')" class="px-4 py-2 bg-white/10 text-white rounded-full hover:bg-[#19dc7e] hover:text-black transition-colors">
+                            Spicy Snacks
+                        </button>
+                        <button onclick="searchKeyword('veggie')" class="px-4 py-2 bg-white/10 text-white rounded-full hover:bg-[#19dc7e] hover:text-black transition-colors">
+                            Veggie Crisps
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Search Results -->
+                <div id="searchResults" class="hidden">
+                    <h4 class="font-medium text-white mb-3">Search Results</h4>
+                    <div class="space-y-2 max-h-64 overflow-y-auto" id="searchResultsList">
+                        <!-- Results will appear here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="fixed inset-y-0 right-0 z-50 w-full md:w-96 glass-effect shadow-2xl transform translate-x-full transition-transform duration-300">
+        <div class="h-full flex flex-col">
+            <!-- Cart Header -->
+            <div class="p-6 border-b border-white/10">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i class="fas fa-shopping-bag text-[#19dc7e]"></i>
+                        Your Cart
+                        <span id="cartItemCount" class="text-sm bg-[#19dc7e]/20 text-[#19dc7e] px-2 py-1 rounded-full">5 items</span>
+                    </h3>
+                    <button onclick="closeCart()" class="p-2 hover:bg-white/10 rounded-lg transition-colors">
+                        <i class="fas fa-times text-gray-400"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Cart Items -->
+            <div class="flex-1 overflow-y-auto p-6">
+                <!-- Empty State -->
+                <div id="emptyCart" class="hidden text-center py-12">
+                    <div class="text-6xl mb-4 text-gray-700">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Your cart is empty</h4>
+                    <p class="text-gray-500 mb-6">Add some crunchy snacks to get started!</p>
+                    <button onclick="closeCart(); scrollToProducts()" class="px-6 py-3 bg-[#19dc7e] text-black font-bold rounded-lg hover:bg-[#14b86e] transition-colors">
+                        Browse Snacks
+                    </button>
+                </div>
+                
+                <!-- Cart Items -->
+                <div id="cartItemsList" class="space-y-4">
+                    <!-- Items will be loaded here -->
+                </div>
+            </div>
+            
+            <!-- Cart Summary -->
+            <div class="border-t border-white/10 p-6 bg-black/50">
+                <div class="space-y-3 mb-6">
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">Subtotal</span>
+                        <span id="cartSubtotal" class="font-bold text-white">₹1,046</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">Shipping</span>
+                        <span id="cartShipping" class="font-bold text-[#19dc7e]">FREE</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">Discount</span>
+                        <span id="cartDiscount" class="font-bold text-[#FF6B6B]">-₹149</span>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-700 pt-4 mb-6">
+                    <div class="flex justify-between text-lg font-bold text-white">
+                        <span>Total</span>
+                        <span id="cartTotal">₹897</span>
+                    </div>
+                </div>
+                
+                <div class="space-y-3">
+                    <button onclick="checkout()" class="btn-primary w-full px-6 py-3 rounded-lg">
+                        Proceed to Checkout
+                    </button>
+                    <button onclick="continueShopping()" class="btn-secondary w-full px-6 py-3 rounded-lg">
+                        Continue Shopping
+                    </button>
+                </div>
+                
+              
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hero Section - Ultimate Experience -->
+    <section class="min-h-screen relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 morphing-shape opacity-20"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 h-64 morphing-shape opacity-20" style="animation-delay: -10s"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 pt-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="scroll-reveal">
+                    <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                        <span class="text-sm font-bold">🚀 JUST LAUNCHED</span>
+                        <div class="w-2 h-2 bg-[#19dc7e] rounded-full animate-ping"></div>
+                    </div>
+                    
+                    <h1 class="title-font text-5xl md:text-7xl lg:text-8xl mb-6 leading-tight">
+                        <span class="block">YOUR NEW </span>
+                        <span class="block text-[#19dc7e] glitch-font">HEALTHY</span>
+                        <span class="block">HABIT</span>
+                    </h1>
+                    
+                    <p class="text-xl text-white/70 mb-8 max-w-xl">
+                        Experience the future of snacking with our space-age, plant-based chips. 
+                        Zero guilt, maximum crunch, infinite flavor.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <button class="btn-primary group" onclick="startExperience()">
+                            <span class="relative z-10 flex items-center justify-center gap-3">
+                                BEGIN JOURNEY
+                                <i class="fas fa-rocket group-hover:translate-x-2 transition-transform"></i>
+                            </span>
+                        </button>
+                        <button class="btn-secondary group" onclick="scrollToProducts()">
+                            <span class="relative z-10 flex items-center justify-center gap-3">
+                                EXPLORE FLAVORS
+                                <i class="fas fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+                            </span>
+                        </button>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#19dc7e] mb-1">10K+</div>
+                            <div class="text-sm text-white/60">HAPPY CRUNCHERS</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#FFD166] mb-1">50+</div>
+                            <div class="text-sm text-white/60">FLAVORS</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-[#FF6B6B] mb-1">100%</div>
+                            <div class="text-sm text-white/60">PLANT POWER</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Content - 3D Product Showcase -->
+                <div class="relative scroll-reveal" style="animation-delay: 0.2s">
+                    <div class="card-3d glass-effect rounded-3xl p-8">
+                        <div class="card-inner">
+                            <!-- Product Display -->
+                            <div class="relative">
+                                <div class="absolute -top-6 -left-6 w-24 h-24 bg-[#19dc7e] rounded-full flex items-center justify-center animate-pulse">
+                                    <span class="text-black font-bold">BESTSELLER</span>
+                                </div>
+                                
+                                <div class="image-zoom-dark h-96 rounded-2xl overflow-hidden mb-6">
+                                    <img src="./images/banana-crisp-bites.webp" alt="Galactic Banana Blast" 
+                                         class="w-full h-full object-cover">
+                                </div>
+                                
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold">GALACTIC BANANA BLAST</h3>
+                                        <p class="text-white/60">Interstellar crunch with flavor</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-3xl font-bold">₹299</div>
+                                        <div class="text-sm text-white/40 line-through">₹499</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Stock Indicator -->
+                                <div class="mb-4">
+                                    <div class="flex justify-between text-sm text-gray-400 mb-2">
+                                        <span>Only 15 left</span>
+                                        <span>75% sold</span>
+                                    </div>
+                                    <div class="stock-indicator-dark">
+                                        <div class="stock-fill-dark" style="width: 75%"></div>
+                                        <div class="stock-pulse-dark"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Interactive Elements -->
+                                <div class="flex gap-3 mb-6">
+                                    <button class="flex-1 btn-action" onclick="addToCart(1)">
+                                        ADD TO CART
+                                    </button>
+                                    <button class="btn-icon" onclick="toggleWishlistItem('galactic-banana')">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="btn-icon" onclick="quickView(1)">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                
+                              
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Elements -->
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[#FFD166] rounded-full flex items-center justify-center float-animation">
+                        <div class="text-black text-center">
+                            <div class="text-2xl font-bold">40%</div>
+                            <div class="text-xs">OFF</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <div class="text-center">
+                <div class="text-white/40 mb-2">SCROLL TO EXPLORE</div>
+                <i class="fas fa-chevron-down text-white/40"></i>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Interactive Product Gallery -->
+    <section class="py-20 relative" id="products">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="title-font text-4xl md:text-6xl mb-4">
+                    <span class="text-[#19dc7e]">FLAVOR</span> GALAXY
+                </h2>
+                <p class="text-xl text-white/60 max-w-2xl mx-auto">
+                    Explore our universe of plant-based snacks. Each flavor is a journey.
+                </p>
+            </div>
+            
+            <!-- Category Filter -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 scroll-reveal" style="animation-delay: 0.1s">
+                <button class="category-filter active" data-category="all">ALL PRODUCTS</button>
+                <button class="category-filter" data-category="fruit">FRUIT CHIPS</button>
+                <button class="category-filter" data-category="veggie">VEGGIE CRISPS</button>
+                <button class="category-filter" data-category="spicy">SPICY RANGE</button>
+                <button class="category-filter" data-category="best">BESTSELLERS</button>
+            </div>
+            
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productGrid">
+                <!-- Product cards will be generated here -->
+            </div>
+            
+            <!-- View All Button -->
+            <div class="text-center mt-12">
+                <button onclick="loadAllProducts()" class="btn-primary px-8 py-3 rounded-full shadow-lg hover:scale-105 transition-transform">
+                    View All Snacks <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 scroll-reveal">
+            <div class="feature-card text-center">
+                <div class="w-16 h-16 rounded-full bg-[#19dc7e]/20 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-leaf text-2xl text-[#19dc7e]"></i>
+                </div>
+                <h3 class="font-bold text-white mb-2">100% Plant-Based</h3>
+                <p class="text-sm text-gray-400">All natural ingredients</p>
+            </div>
+            
+            <div class="feature-card text-center">
+                <div class="w-16 h-16 rounded-full bg-[#19dc7e]/20 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-ban text-2xl text-[#19dc7e]"></i>
+                </div>
+                <h3 class="font-bold text-white mb-2">No Preservatives</h3>
+                <p class="text-sm text-gray-400">Zero additives</p>
+            </div>
+            
+            <div class="feature-card text-center">
+                <div class="w-16 h-16 rounded-full bg-[#19dc7e]/20 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-truck text-2xl text-[#19dc7e]"></i>
+                </div>
+                <h3 class="font-bold text-white mb-2">Free Shipping</h3>
+                <p class="text-sm text-gray-400">Over ₹500</p>
+            </div>
+            
+            <div class="feature-card text-center">
+                <div class="w-16 h-16 rounded-full bg-[#19dc7e]/20 flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-recycle text-2xl text-[#19dc7e]"></i>
+                </div>
+                <h3 class="font-bold text-white mb-2">Eco-Friendly</h3>
+                <p class="text-sm text-gray-400">Sustainable packaging</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Interactive Experience Section -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left - Interactive Experience -->
+                <div class="scroll-reveal">
+                    <h2 class="title-font text-4xl md:text-5xl mb-6">
+                        <span class="text-[#FFD166]">CREATE YOUR</span><br>
+                        <span class="text-[#19dc7e]">PERFECT CRUNCH</span>
+                    </h2>
+                    
+                    <!-- Flavor Builder -->
+                    <div class="glass-effect rounded-2xl p-6 mb-8">
+                        <div class="mb-6">
+                            <h4 class="text-lg font-bold mb-3 text-white">CHOOSE YOUR BASE</h4>
+                            <div class="flex gap-3">
+                                <button class="flavor-option active" data-base="banana">
+                                    <img src="./images/banana-crisp-bites.webp" class="w-12 h-12 rounded-lg object-cover">
+                                    <span class="text-white">BANANA</span>
+                                </button>
+                                <button class="flavor-option" data-base="apple">
+                                    <img src="./images/banana-crisp-bites.webp" class="w-12 h-12 rounded-lg object-cover">
+                                    <span class="text-white">APPLE</span>
+                                </button>
+                                <button class="flavor-option" data-base="mango">
+                                    <img src="./images/banana-crisp-bites.webp" class="w-12 h-12 rounded-lg object-cover">
+                                    <span class="text-white">MANGO</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-lg font-bold mb-3 text-white">ADD FLAVOR BOOST</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="boost-option" data-boost="spicy">🌶️ SPICY</button>
+                                <button class="boost-option" data-boost="cheesy">🧀 CHEESY</button>
+                                <button class="boost-option" data-boost="sweet">🍯 SWEET</button>
+                                <button class="boost-option" data-boost="sour">🍋 SOUR</button>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-lg font-bold mb-3 text-white">SELECT PACK SIZE</h4>
+                            <div class="flex gap-3">
+                                <button class="size-option">50g</button>
+                                <button class="size-option active">100g</button>
+                                <button class="size-option">200g</button>
+                                <button class="size-option">500g</button>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-primary w-full" onclick="createCustomSnack()">
+                            CREATE MY SNACK - ₹349
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right - Visual Preview -->
+                <div class="scroll-reveal" style="animation-delay: 0.2s">
+                    <div class="glass-effect rounded-2xl p-8">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold mb-2 text-white">YOUR CUSTOM SNACK</h3>
+                            <p class="text-white/60">Real-time preview of your creation</p>
+                        </div>
+                        
+                        <div class="relative h-64 mb-6">
+                            <div id="snackPreview" class="w-full h-full flex items-center justify-center">
+                                <img src="./images/banana-crisp-bites.webp" class="w-48 h-48 object-contain">
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <div class="bg-[#19dc7e] text-black px-3 py-1 rounded-full text-sm font-bold">
+                                    CUSTOM
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-white/60">Base:</span>
+                                <span class="font-bold text-white" id="previewBase">Banana</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-white/60">Flavor:</span>
+                                <span class="font-bold text-white" id="previewFlavor">Original</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-white/60">Size:</span>
+                                <span class="font-bold text-white" id="previewSize">100g</span>
+                            </div>
+                            <div class="border-t border-white/10 pt-4">
+                                <div class="flex justify-between text-xl font-bold text-white">
+                                    <span>TOTAL:</span>
+                                    <span id="previewPrice">₹349</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us Section -->
+    <section class="bg-gradient-to-b from-black to-[#1a1a2e] py-16 scroll-reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-white mb-4">Why Choose DRIYUM?</h2>
+                <p class="text-white/60 max-w-2xl mx-auto">We're changing the way you snack, one crunch at a time</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card text-center">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-r from-[#19dc7e]/20 to-[#19dc7e]/10 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-heart text-3xl text-[#19dc7e]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Heart Healthy</h3>
+                    <p class="text-white/60">Low sodium, high fiber snacks that are good for your heart and taste buds</p>
+                </div>
+                
+                <div class="feature-card text-center">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-r from-[#19dc7e]/20 to-[#19dc7e]/10 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-seedling text-3xl text-[#19dc7e]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Sustainable</h3>
+                    <p class="text-white/60">Eco-friendly production and packaging to protect our planet</p>
+                </div>
+                
+                <div class="feature-card text-center">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-r from-[#19dc7e]/20 to-[#19dc7e]/10 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-award text-3xl text-[#19dc7e]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Premium Quality</h3>
+                    <p class="text-white/60">Made with the finest ingredients and perfected through years of research</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Interactive Testimonials -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="title-font text-4xl md:text-6xl mb-4">
+                    <span class="text-[#FF6B6B]">CRUNCH</span> CREW
+                </h2>
+                <p class="text-xl text-white/60">Join thousands of happy snackers</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Testimonial Carousel -->
+                <div class="testimonial-carousel">
+                    <!-- Testimonials will be dynamically added -->
+                </div>
+                
+                <!-- Navigation -->
+                <button class="carousel-nav prev" onclick="prevTestimonial()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-nav next" onclick="nextTestimonial()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ultimate CTA -->
+    <section class="py-20 relative scroll-reveal">
+        <div class="container mx-auto px-4">
+            <div class="liquid-bg rounded-3xl p-12 text-center relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="title-font text-4xl md:text-6xl mb-6">
+                        READY TO <span class="neon-glow">CRUNCH</span>?
+                    </h2>
+                    <p class="text-xl mb-8 max-w-2xl mx-auto">
+                        Join the snack revolution. Limited-time launch offer!
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="btn-cta-primary" onclick="startShopping()">
+                            <span class="relative z-10 flex items-center justify-center gap-3">
+                                GET STARTED - 40% OFF
+                                <i class="fas fa-bolt"></i>
+                            </span>
+                        </button>
+                        <button class="btn-cta-secondary" onclick="subscribeNewsletter()">
+                            <span class="relative z-10 flex items-center justify-center gap-3">
+                                GET UPDATES
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </button>
+                    </div>
+                    
+                    <div class="mt-8 text-sm text-black/60">
+                        🚀 Free shipping • 30-day returns • 100% satisfaction
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ultimate Footer -->
+    <footer class=" pt-12 pb-8 relative">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <img src="singlelogo.png" alt="DRIYUM" class=" mb-4"  width="100"/>
+                    <p class="text-white/60 mb-6 max-w-md">
+                        Redefining snacking with plant-powered, Fruit Flavour Packed, 
+                        guilt-free crunch experiences.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="social-btn">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h4 class="font-bold mb-4 text-[#19dc7e]">EXPLORE</h4>
+                    <div class="space-y-2">
+                        <a href="#" class="footer-link">Shop All</a>
+                        <a href="#" class="footer-link">New Arrivals</a>
+                        <a href="#" class="footer-link">Best Sellers</a>
+                        <a href="#" class="footer-link">Collections</a>
+                    </div>
+                </div>
+                
+                <!-- Company -->
+                <div>
+                    <h4 class="font-bold mb-4 text-[#FFD166]">COMPANY</h4>
+                    <div class="space-y-2">
+                        <a href="#" class="footer-link">Our Story</a>
+                        <a href="#" class="footer-link">Blog</a>
+                        <a href="#" class="footer-link">Careers</a>
+                        <a href="#" class="footer-link">Press</a>
+                    </div>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h4 class="font-bold mb-4 text-[#FF6B6B]">SUPPORT</h4>
+                    <div class="space-y-2">
+                        <a href="#" class="footer-link">FAQ</a>
+                        <a href="#" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link">Shipping</a>
+                        <a href="#" class="footer-link">Returns</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-white/40 text-sm mb-4 md:mb-0">
+                        © 2024 DRIYUM. All rights reserved. Made with ❤️ & 🚀
+                    </div>
+                    <div class="flex gap-6">
+                        <a href="#" class="text-white/40 hover:text-white text-sm">Privacy</a>
+                        <a href="#" class="text-white/40 hover:text-white text-sm">Terms</a>
+                        <a href="#" class="text-white/40 hover:text-white text-sm">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Product Data 
+        const products = [
+            {
+                id: 1,
+                name: 'GALACTIC BANANA BLAST',
+                category: 'fruit',
+                tags: ['best', 'fruit'],
+                price: 299,
+                originalPrice: 499,
+                discount: 40,
+                stock: 85,
+                description: 'Interstellar crunch with banana flavor',
+                image: './images/banana-crisp-bites.webp',
+                rating: 4.9,
+                reviews: 124
+            },
+            {
+                id: 2,
+                name: 'NEBULA APPLE CRUNCH',
+                category: 'fruit',
+                tags: ['best', 'fruit'],
+                price: 349,
+                originalPrice: 449,
+                discount: 22,
+                stock: 60,
+                description: 'apple slices with stardust seasoning',
+                image: './images/banana-crisp-bites.webp',
+                rating: 4.7,
+                reviews: 89
+            },
+            {
+                id: 3,
+                name: 'QUANTUM MANGO TANGO',
+                category: 'fruit',
+                tags: ['fruit'],
+                price: 399,
+                originalPrice: 499,
+                discount: 20,
+                stock: 40,
+                description: 'Multi-dimensional mango experience',
+                image: './images/banana-crisp-bites.webp',
+                rating: 4.8,
+                reviews: 67
+            },
+            {
+                id: 4,
+                name: 'KALE KRUNCH',
+                category: 'veggie',
+                tags: ['best', 'veggie'],
+                price: 299,
+                originalPrice: 399,
+                discount: 25,
+                stock: 75,
+                description: 'Kale chips with universal herbs',
+                image: './images/banana-crisp-bites.webp',
+                rating: 4.6,
+                reviews: 112
+            },
+            {
+                id: 5,
+                name: 'STARDUST SWEET POTATO',
+                category: 'veggie',
+                tags: ['spicy', 'veggie'],
+                price: 349,
+                originalPrice: 449,
+                discount: 22,
+                stock: 50,
+                description: 'Sweet potato with chili kick',
+                image: './images/banana-crisp-bites.webp',
+                rating: 4.7,
+                reviews: 56
+            },
+            {
+                id: 6,
+                name: 'BLACK HOLE BEET BOOST',
+                category: 'veggie',
+                tags: ['veggie'],
+                price: 399,
+                originalPrice: 499,
+                discount: 20,
+                stock: 35,
+                description: 'Earthly beetroot chips',
+                image: './images/banana-crisp-bites.webp',
+                rating: 4.9,
+                reviews: 45
+            },
+            {
+                id: 7,
+                name: 'FIERY CHILI SUPERNOVA',
+                category: 'spicy',
+                tags: ['spicy', 'best'],
+                price: 449,
+                originalPrice: 599,
+                discount: 25,
+                stock: 25,
+                description: 'Explosive spicy flavor combination',
+                image: './images/banana-crisp-bites.webp',
+                rating: 4.8,
+                reviews: 78
+            },
+            {
+                id: 8,
+                name: 'MILKY WAY VEGGIE PACK',
+                category: 'veggie',
+                tags: ['best', 'veggie'],
+                price: 499,
+                originalPrice: 699,
+                discount: 29,
+                stock: 45,
+                description: 'Colorful veggie assortment',
+                image: './images/banana-crisp-bites.webp',
+                rating: 5.0,
+                reviews: 203
+            }
+        ];
+        
+        // Testimonials
+        const testimonials = [
+            {
+                name: 'SPACE EXPLORER ALEX',
+                role: 'Astronaut & Food Critic',
+                text: 'These chips literally took me to another dimension! The Galactic Banana Blast is out of this world!',
+                rating: 5,
+                avatar: '👨‍🚀'
+            },
+            {
+                name: 'GALACTIC GOURMET MAYA',
+                role: 'Interstellar Chef',
+                text: 'As a space chef, I can confirm these are the most innovative snacks in the galaxy. Zero-gravity crunch achieved!',
+                rating: 5,
+                avatar: '👩‍🍳'
+            },
+            {
+                name: 'PLANETARY FOOD BLOGGER',
+                role: 'Influencer',
+                text: 'My followers went crazy for the Nebula Apple Crunch. The visuals alone are worth the purchase!',
+                rating: 4,
+                avatar: '📱'
+            }
+        ];
+        
+        // Cart Data
+        let cart = [
+            {
+                id: 1,
+                name: 'GALACTIC BANANA BLAST',
+                price: 299,
+                quantity: 2,
+                image: './images/banana-crisp-bites.webp'
+            },
+            {
+                id: 4,
+                name: 'KALE KRUNCH',
+                price: 299,
+                quantity: 1,
+                image: './images/banana-crisp-bites.webp'
+            },
+            {
+                id: 7,
+                name: 'FIERY CHILI SUPERNOVA',
+                price: 449,
+                quantity: 1,
+                image: './images/banana-crisp-bites.webp'
+            }
+        ];
+        
+        // State Management
+        let currentCategory = 'all';
+        let currentTestimonial = 0;
+        let customSnack = {
+            base: 'banana',
+            flavor: 'original',
+            size: '100g',
+            price: 349
+        };
+        let recentSearches = ['banana', 'spicy', 'veggie', 'fruit'];
+        let mobileMenuOpen = false;
+        
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loading screen
+            setTimeout(() => {
+                document.getElementById('loadingScreen').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                }, 1000);
+            }, 2000);
+            
+            // Initialize particles
+            initParticles();
+            
+            // Initialize custom cursor
+            initCustomCursor();
+            
+            // Generate product grid
+            initProducts();
+            
+            // Initialize cart
+            initCart();
+            
+            // Initialize search
+            initSearch();
+            
+            // Generate testimonials
+            renderTestimonials();
+            
+            // Initialize scroll animations
+            initScrollAnimations();
+            
+            // Initialize scroll progress
+            initScrollProgress();
+            
+            // Initialize interactive elements
+            initInteractiveElements();
+            
+            // Initialize category filters
+            initCategoryFilters();
+            
+            // Play startup animation
+            startupAnimation();
+            
+            // Initialize mobile menu state
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        });
+        
+        // Particle System
+        function initParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 10 + 5;
+                const posX = Math.random() * 100;
+                const duration = Math.random() * 30 + 20;
+                const delay = Math.random() * 5;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Custom Cursor
+        function initCustomCursor() {
+            const cursor = document.querySelector('.custom-cursor');
+            const dot = document.querySelector('.cursor-dot');
+            
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                dot.style.left = e.clientX + 'px';
+                dot.style.top = e.clientY + 'px';
+            });
+            
+            // Add hover effects
+            document.querySelectorAll('button, a, .product-card').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.style.transform = 'scale(1.5)';
+                    cursor.style.background = 'rgba(25, 220, 126, 0.2)';
+                });
+                
+                el.addEventListener('mouseleave', () => {
+                    cursor.style.transform = 'scale(1)';
+                    cursor.style.background = 'transparent';
+                });
+            });
+        }
+        
+        // Initialize Products
+        function initProducts() {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+            
+            const filteredProducts = currentCategory === 'all' 
+                ? products 
+                : products.filter(p => p.category === currentCategory || p.tags.includes(currentCategory));
+            
+            filteredProducts.forEach((product, index) => {
+                const productCard = document.createElement('div');
+                productCard.className = 'scroll-reveal';
+                productCard.style.animationDelay = `${index * 0.1}s`;
+                productCard.innerHTML = `
+                    <div class="glass-effect rounded-2xl overflow-hidden border border-white/10 hover:border-[#19dc7e]/30 transition-all duration-500 group h-full">
+                        <!-- Product Image -->
+                        <div class="relative image-zoom-dark">
+                            <img src="${product.image}" alt="${product.name}" 
+                                 class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700">
+                            
+                            <!-- Badges -->
+                            <div class="absolute top-3 left-3 flex flex-col gap-1">
+                                ${product.tags.includes('best') ? `
+                                    <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                                        BESTSELLER
+                                    </span>
+                                ` : ''}
+                                ${product.discount > 25 ? `
+                                    <span class="bg-[#19dc7e] text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                                        -${product.discount}% OFF
+                                    </span>
+                                ` : ''}
+                            </div>
+                            
+                            <!-- Quick Actions -->
+                            <div class="absolute bottom-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button onclick="addToWishlist(${product.id})" class="w-10 h-10 rounded-full bg-black/80 flex items-center justify-center shadow hover:bg-black">
+                                    <i class="fas fa-heart text-gray-400 hover:text-red-400"></i>
+                                </button>
+                                <button onclick="quickView(${product.id})" class="w-10 h-10 rounded-full bg-black/80 flex items-center justify-center shadow hover:bg-black">
+                                    <i class="fas fa-eye text-gray-400 hover:text-[#19dc7e]"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product Info -->
+                        <div class="p-4">
+                            <h3 class="font-bold text-white text-lg mb-1">${product.name}</h3>
+                            <p class="text-gray-400 text-sm mb-3">${product.description}</p>
+                            
+                            <!-- Rating -->
+                            <div class="flex items-center gap-1 mb-3">
+                                <div class="flex text-[#FFD166]">
+                                    ${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}
+                                </div>
+                                <span class="text-sm text-gray-500 ml-1">${product.rating} (${product.reviews})</span>
+                            </div>
+                            
+                            <!-- Price -->
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <span class="text-2xl font-bold text-white">₹${product.price}</span>
+                                    <span class="text-gray-500 line-through ml-2">₹${product.originalPrice}</span>
+                                </div>
+                                <div class="text-sm ${product.stock > 50 ? 'text-[#19dc7e]' : product.stock > 10 ? 'text-[#FFD166]' : 'text-[#FF6B6B]'}">
+                                    ${product.stock > 50 ? 'In Stock' : product.stock > 10 ? 'Low Stock' : 'Last Few'}
+                                </div>
+                            </div>
+                            
+                            <!-- Action Buttons -->
+                            <div class="flex gap-2">
+                                <button onclick="addToCart(${product.id})" class="btn-add-to-cart flex-1">
+                                    Add to Cart
+                                </button>
+                                <button onclick="quickBuy(${product.id})" class="btn-quick-buy">
+                                    <i class="fas fa-bolt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                grid.appendChild(productCard);
+            });
+        }
+        
+        // Initialize Cart
+        function initCart() {
+            updateCartCount();
+            renderCartItems();
+        }
+        
+        function updateCartCount() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = totalItems;
+            document.getElementById('cartItemCount').textContent = `${totalItems} item${totalItems !== 1 ? 's' : ''}`;
+        }
+        
+        function renderCartItems() {
+            const container = document.getElementById('cartItemsList');
+            const emptyCart = document.getElementById('emptyCart');
+            
+            if (cart.length === 0) {
+                container.innerHTML = '';
+                emptyCart.classList.remove('hidden');
+                return;
+            }
+            
+            emptyCart.classList.add('hidden');
+            container.innerHTML = '';
+            
+            let subtotal = 0;
+            
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'glass-effect flex items-center gap-4 p-4 rounded-lg';
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-lg object-cover">
+                    <div class="flex-1">
+                        <h4 class="font-bold text-white">${item.name}</h4>
+                        <p class="text-gray-400 text-sm">₹${item.price} each</p>
+                        <div class="flex items-center gap-3 mt-2">
+                            <button onclick="updateQuantity(${index}, -1)" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
+                                <i class="fas fa-minus text-xs"></i>
+                            </button>
+                            <span class="font-bold text-white">${item.quantity}</span>
+                            <button onclick="updateQuantity(${index}, 1)" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
+                                <i class="fas fa-plus text-xs"></i>
+                            </button>
+                            <button onclick="removeFromCart(${index})" class="ml-4 text-[#FF6B6B] hover:text-red-300 text-sm">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="font-bold text-white">₹${itemTotal}</div>
+                    </div>
+                `;
+                container.appendChild(cartItem);
+            });
+            
+            updateCartTotals(subtotal);
+        }
+        
+        function updateCartTotals(subtotal) {
+            const shipping = subtotal >= 500 ? 0 : 50;
+            const discount = subtotal >= 1000 ? 149 : 0;
+            const total = subtotal + shipping - discount;
+            
+            document.getElementById('cartSubtotal').textContent = `₹${subtotal}`;
+            document.getElementById('cartShipping').textContent = shipping === 0 ? 'FREE' : `₹${shipping}`;
+            document.getElementById('cartDiscount').textContent = discount > 0 ? `-₹${discount}` : '-₹0';
+            document.getElementById('cartTotal').textContent = `₹${total}`;
+        }
+        
+        // Cart Functions
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: product.name,
+                    price: product.price,
+                    quantity: 1,
+                    image: product.image
+                });
+            }
+            
+            updateCartCount();
+            renderCartItems();
+            showNotification(`🎉 Added ${product.name} to cart!`, 'success');
+            
+            // Animate cart icon
+            const cartIcon = document.getElementById('cartCount');
+            cartIcon.classList.add('animate-ping');
+            setTimeout(() => cartIcon.classList.remove('animate-ping'), 500);
+        }
+        
+        function updateQuantity(index, change) {
+            cart[index].quantity += change;
+            
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            
+            updateCartCount();
+            renderCartItems();
+        }
+        
+        function removeFromCart(index) {
+            const itemName = cart[index].name;
+            cart.splice(index, 1);
+            updateCartCount();
+            renderCartItems();
+            showNotification(`🗑️ Removed ${itemName} from cart`, 'warning');
+        }
+        
+        // Search Functions
+        function initSearch() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+        }
+        
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!query) return;
+            
+            const results = products.filter(p => 
+                p.name.toLowerCase().includes(query) || 
+                p.description.toLowerCase().includes(query) ||
+                p.tags.some(tag => tag.includes(query)) ||
+                p.category.includes(query)
+            );
+            
+            const resultsList = document.getElementById('searchResultsList');
+            const resultsContainer = document.getElementById('searchResults');
+            
+            if (results.length > 0) {
+                resultsList.innerHTML = '';
+                results.forEach(product => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'flex items-center gap-3 p-3 hover:bg-white/10 rounded-lg cursor-pointer';
+                    resultItem.onclick = () => {
+                        closeSearch();
+                        scrollToProducts();
+                    };
+                    
+                    resultItem.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}" class="w-12 h-12 rounded-lg object-cover">
+                        <div class="flex-1">
+                            <div class="font-bold text-white">${product.name}</div>
+                            <div class="text-sm text-gray-400">${product.description}</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold text-white">₹${product.price}</div>
+                        </div>
+                    `;
+                    resultsList.appendChild(resultItem);
+                });
+                resultsContainer.classList.remove('hidden');
+            } else {
+                resultsList.innerHTML = '<div class="text-center py-8 text-gray-500">No results found</div>';
+                resultsContainer.classList.remove('hidden');
+            }
+        }
+        
+        function searchKeyword(keyword) {
+            document.getElementById('searchInput').value = keyword;
+            performSearch();
+        }
+        
+        // Modal Functions
+        function openSearch() {
+            const modal = document.getElementById('searchModal');
+            const content = document.getElementById('searchModalContent');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                document.getElementById('searchInput').focus();
+            }, 10);
+        }
+        
+        function closeSearch() {
+            const modal = document.getElementById('searchModal');
+            const content = document.getElementById('searchModalContent');
+            content.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+        
+        function openCart() {
+            document.getElementById('cartSidebar').classList.remove('translate-x-full');
+        }
+        
+        function closeCart() {
+            document.getElementById('cartSidebar').classList.add('translate-x-full');
+        }
+        
+        // Mobile Menu Functions
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenuOpen = !mobileMenuOpen;
+            
+            if (mobileMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenu.style.opacity = '1';
+                    mobileMenu.style.transform = 'translateX(0)';
+                }, 10);
+                // Prevent body scrolling when menu is open
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.style.opacity = '0';
+                mobileMenu.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+                // Restore body scrolling
+                document.body.style.overflow = '';
+            }
+        }
+        
+        function toggleMobileCategory() {
+            const categoryContent = document.querySelector('.mobile-category-content');
+            const categoryArrow = document.querySelector('.mobile-category-arrow');
+            
+            categoryContent.classList.toggle('active');
+            categoryArrow.classList.toggle('active');
+        }
+        
+        // Category Filters
+        function initCategoryFilters() {
+            document.querySelectorAll('.category-filter').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.category-filter').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.category;
+                    initProducts();
+                });
+            });
+        }
+        
+        // Filter products from mobile menu
+        function filterProducts(category) {
+            currentCategory = category;
+            initProducts();
+            showNotification(`Showing ${category} snacks`, 'info');
+        }
+        
+        // Render Testimonials
+        function renderTestimonials() {
+            const carousel = document.querySelector('.testimonial-carousel');
+            carousel.innerHTML = '';
+            
+            testimonials.forEach((testimonial, index) => {
+                const testimonialEl = document.createElement('div');
+                testimonialEl.className = `testimonial-slide ${index === currentTestimonial ? 'active' : ''}`;
+                
+                testimonialEl.innerHTML = `
+                    <div class="glass-effect rounded-3xl p-8 max-w-2xl mx-auto">
+                        <div class="text-6xl mb-4">${testimonial.avatar}</div>
+                        <div class="text-[#FFD166] text-2xl mb-4">${'★'.repeat(testimonial.rating)}</div>
+                        <p class="text-xl italic mb-6">"${testimonial.text}"</p>
+                        <div>
+                            <div class="font-bold text-lg">${testimonial.name}</div>
+                            <div class="text-white/60">${testimonial.role}</div>
+                        </div>
+                    </div>
+                `;
+                
+                carousel.appendChild(testimonialEl);
+            });
+        }
+        
+        // Scroll Animations
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            });
+            
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        // Scroll Progress
+        function initScrollProgress() {
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById('progressBar').style.width = scrolled + '%';
+            });
+        }
+        
+        // Interactive Elements
+        function initInteractiveElements() {
+            // Flavor Options
+            document.querySelectorAll('.flavor-option').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.flavor-option').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    updateCustomSnack('base', this.dataset.base);
+                });
+            });
+            
+            // Boost Options
+            document.querySelectorAll('.boost-option').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.boost-option').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    updateCustomSnack('flavor', this.dataset.boost);
+                });
+            });
+            
+            // Size Options
+            document.querySelectorAll('.size-option').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.size-option').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    updateCustomSnack('size', this.textContent);
+                });
+            });
+        }
+        
+        // Startup Animation
+        function startupAnimation() {
+            // Create confetti
+            createConfetti();
+            
+            // Animate logo
+            const logo = document.querySelector('.logo-font');
+            logo.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                logo.style.transform = 'scale(1)';
+                logo.style.transition = 'transform 0.5s ease';
+            }, 500);
+        }
+        
+        // Confetti Animation
+        function createConfetti() {
+            const colors = ['#19dc7e', '#FFD166', '#FF6B6B', '#ffffff'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const size = Math.random() * 10 + 5;
+                const posX = Math.random() * 100;
+                const duration = Math.random() * 3 + 2;
+                const delay = Math.random() * 2;
+                
+                confetti.style.background = color;
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                confetti.style.left = `${posX}%`;
+                confetti.style.animationDuration = `${duration}s`;
+                confetti.style.animationDelay = `${delay}s`;
+                
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+        
+        // Update Custom Snack
+        function updateCustomSnack(type, value) {
+            customSnack[type] = value;
+            
+            // Update price based on size
+            if (type === 'size') {
+                const sizePrices = {
+                    '50g': 199,
+                    '100g': 349,
+                    '200g': 599,
+                    '500g': 1299
+                };
+                customSnack.price = sizePrices[value] || 349;
+            }
+            
+            // Update preview
+            document.getElementById('previewBase').textContent = customSnack.base.toUpperCase();
+            document.getElementById('previewFlavor').textContent = customSnack.flavor.toUpperCase();
+            document.getElementById('previewSize').textContent = customSnack.size;
+            document.getElementById('previewPrice').textContent = `₹${customSnack.price}`;
+            
+            // Update snack preview image
+            const preview = document.getElementById('snackPreview');
+            preview.innerHTML = `<img src="./images/banana-crisp-bites.webp" class="w-48 h-48 object-contain">`;
+        }
+        
+        // Create Custom Snack
+        function createCustomSnack() {
+            const snack = {
+                ...customSnack,
+                id: Date.now(),
+                name: `CUSTOM ${customSnack.base.toUpperCase()} ${customSnack.flavor.toUpperCase()}`,
+                image: './images/banana-crisp-bites.webp',
+                price: customSnack.price
+            };
+            
+            addToCart(snack);
+            showNotification(`🎉 Custom snack created! Added to cart.`, 'success');
+            
+            // Add celebration effect
+            createConfetti();
+        }
+        
+        // Wishlist
+        function addToWishlist(productId) {
+            const product = products.find(p => p.id === productId);
+            showNotification(`❤️ Added ${product.name} to wishlist!`, 'success');
+        }
+        
+        function toggleWishlist() {
+            showNotification('✨ Wishlist feature coming soon!', 'info');
+        }
+        
+        function toggleWishlistItem(productId) {
+            addToWishlist(productId);
+        }
+        
+        // Quick Actions
+        function quickView(productId) {
+            const product = products.find(p => p.id === productId);
+            showNotification(`👁️ Viewing ${product.name}`, 'info');
+        }
+        
+        function quickBuy(productId) {
+            const product = products.find(p => p.id === productId);
+            addToCart(productId);
+            openCart();
+            showNotification(`⚡ Quick buy: ${product.name}`, 'success');
+        }
+        
+        // Checkout
+        function checkout() {
+            if (cart.length === 0) {
+                showNotification('🛒 Your cart is empty!', 'error');
+                return;
+            }
+            showNotification('🚀 Redirecting to checkout...', 'info');
+        }
+        
+        function continueShopping() {
+            closeCart();
+            scrollToProducts();
+        }
+        
+        // Promo Code
+        function applyPromo() {
+            const code = document.getElementById('promoCode').value;
+            if (code.toUpperCase() === 'DRIYUM20') {
+                showNotification('🎉 20% discount applied!', 'success');
+            } else if (code) {
+                showNotification('❌ Invalid promo code', 'error');
+            }
+        }
+        
+        // Coupon
+        function showCoupon() {
+            showNotification('🎁 Use code: WELCOME20 for 20% off!', 'success');
+        }
+        
+        // Notification System
+        function showNotification(message, type = 'info') {
+            const container = document.getElementById('notificationContainer');
+            const notification = document.createElement('div');
+            
+            notification.className = 'notification-dark p-4 rounded-lg shadow-xl max-w-sm transform translate-x-full';
+            notification.innerHTML = `
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-${type === 'success' ? 'check-circle text-[#19dc7e]' : type === 'error' ? 'exclamation-circle text-[#FF6B6B]' : 'info-circle text-[#FFD166]'}"></i>
+                    </div>
+                    <div class="ml-3 flex-1">
+                        <p class="text-sm font-medium text-white">${message}</p>
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove()" class="ml-4 flex-shrink-0">
+                        <i class="fas fa-times text-gray-400 hover:text-white"></i>
+                    </button>
+                </div>
+            `;
+            
+            container.appendChild(notification);
+            
+            // Show with animation
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 10);
+            
+            // Auto remove
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.style.opacity = '0';
+                    notification.style.transform = 'translateX(100%)';
+                    setTimeout(() => notification.remove(), 300);
+                }
+            }, 3000);
+        }
+        
+        // Navigation Functions
+        function closeAnnouncement() {
+            const announcementBar = document.querySelector('.announcement-bar');
+            if (announcementBar) {
+                announcementBar.remove();
+            }
+        }
+        
+        function startExperience() {
+            scrollToProducts();
+            showNotification('🚀 Beginning your crunchy journey!', 'success');
+        }
+        
+        function scrollToProducts() {
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function startShopping() {
+            currentCategory = 'all';
+            document.querySelectorAll('.category-filter').forEach(b => b.classList.remove('active'));
+            document.querySelector('[data-category="all"]').classList.add('active');
+            initProducts();
+            scrollToProducts();
+            showNotification('🛒 Let\'s find your perfect crunch!', 'success');
+        }
+        
+        function loadAllProducts() {
+            currentCategory = 'all';
+            document.querySelectorAll('.category-filter').forEach(b => b.classList.remove('active'));
+            document.querySelector('[data-category="all"]').classList.add('active');
+            initProducts();
+            scrollToProducts();
+            showNotification('🌈 Showing all snacks!', 'success');
+        }
+        
+        function subscribeNewsletter() {
+            showNotification('📬 You\'re subscribed to updates!', 'success');
+        }
+        
+        // Modal Functions
+        function openLoginModal() {
+            showNotification('🔐 Login modal would open here', 'info');
+        }
+        
+        function openRegisterModal() {
+            showNotification('📝 Registration modal would open here', 'info');
+        }
+        
+        // Testimonial Navigation
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            renderTestimonials();
+        }
+        
+        function prevTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            renderTestimonials();
+        }
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav-link, .mobile-sub-link').forEach(link => {
+            link.addEventListener('click', () => {
+                // Don't close menu for category sub-links
+                if (!link.classList.contains('mobile-sub-link')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+        
+        // Close modals on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeSearch();
+                closeCart();
+                if (mobileMenuOpen) {
+                    toggleMobileMenu();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

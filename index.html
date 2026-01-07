@@ -11,6 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Fredoka+One&family=Montserrat:wght@800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik+Glitch&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=BBH+Bogle&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --primary: #19dc7e;
@@ -41,6 +45,9 @@
         
         .glitch-font {
             font-family: 'Rubik Glitch', cursive;
+        }
+        .rubik-wet-paint-regular {
+             font-family: "Rubik Wet Paint", cursive;
         }
         
         /* Advanced 3D Effects */
@@ -985,7 +992,7 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="#" class="nav-link group relative">
+                    <a href="./pages/shop.html" class="nav-link group relative">
                         <span class="text-white/80 group-hover:text-white transition-colors">SHOP</span>
                         <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#19dc7e] group-hover:w-full transition-all duration-300"></div>
                     </a>
@@ -1027,13 +1034,13 @@
                         </div>
                     </div>
                     
-                    <a href="#" class="nav-link group relative">
+                    <a href="./pages/about.html" class="nav-link group relative">
                         <span class="text-white/80 group-hover:text-white transition-colors">ABOUT</span>
                         <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#19dc7e] group-hover:w-full transition-all duration-300"></div>
                     </a>
                     
-                    <a href="#" class="nav-link group relative">
-                        <span class="text-white/80 group-hover:text-white transition-colors">BLOG</span>
+                    <a href="./pages/contact.html" class="nav-link group relative">
+                        <span class="text-white/80 group-hover:text-white transition-colors">CONTACT</span>
                         <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#19dc7e] group-hover:w-full transition-all duration-300"></div>
                     </a>
                 </div>
@@ -1058,11 +1065,11 @@
                                 <div class="text-sm text-white/60">Sign in to your account</div>
                             </div>
                             
-                            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 transition-colors">
+                            <a href="./pages/login-register.html" class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 transition-colors">
                                 <i class="fas fa-sign-in-alt text-[#19dc7e]"></i>
                                 <span>Sign In</span>
                             </a>
-                            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 transition-colors">
+                            <a href="./pages/login-register.html" class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 transition-colors">
                                 <i class="fas fa-user-plus text-[#19dc7e]"></i>
                                 <span>Create Account</span>
                             </a>
@@ -1126,12 +1133,12 @@
             <div class="flex-1 overflow-y-auto p-4">
                 <!-- Main Navigation -->
                 <nav class="space-y-1">
-                    <a href="#" class="mobile-nav-link active" onclick="toggleMobileMenu()">
+                    <a href="index.html" class="mobile-nav-link active" onclick="toggleMobileMenu()">
                         <i class="fas fa-home"></i>
                         Home
                     </a>
                     
-                    <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu(); scrollToProducts();">
+                    <a href="./pages/shop.html" class="mobile-nav-link" onclick="toggleMobileMenu(); scrollToProducts();">
                         <i class="fas fa-store"></i>
                         Shop All
                     </a>
@@ -1183,11 +1190,11 @@
                     <!-- Account Section -->
                     <div class="mb-4">
                         <div class="text-xs uppercase text-white/40 mb-2">Account</div>
-                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu(); openLoginModal();">
+                        <a href="./pages/login-register.html" class="mobile-nav-link" onclick="toggleMobileMenu(); openLoginModal();">
                             <i class="fas fa-sign-in-alt text-[#19dc7e]"></i>
                             Sign In
                         </a>
-                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu(); openRegisterModal();">
+                        <a href="./pages/login-register.html" class="mobile-nav-link" onclick="toggleMobileMenu(); openRegisterModal();">
                             <i class="fas fa-user-plus text-[#19dc7e]"></i>
                             Create Account
                         </a>
@@ -1197,16 +1204,16 @@
                     <!-- Company Section -->
                     <div class="mb-4">
                         <div class="text-xs uppercase text-white/40 mb-2">Company</div>
-                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                        <a href="./pages/about.html" class="mobile-nav-link" onclick="toggleMobileMenu()">
                             <i class="fas fa-info-circle"></i>
                             About Us
                         </a>
                       
-                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                        <a href="./pages/faq.html" class="mobile-nav-link" onclick="toggleMobileMenu()">
                             <i class="fas fa-question-circle"></i>
                             FAQ
                         </a>
-                        <a href="#" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                        <a href="./pages/contact.html" class="mobile-nav-link" onclick="toggleMobileMenu()">
                             <i class="fas fa-phone"></i>
                             Contact
                         </a>
@@ -1850,7 +1857,7 @@
             <div class="border-t border-white/10 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="text-white/40 text-sm mb-4 md:mb-0">
-                        © 2024 DRIYUM. All rights reserved. Made with ❤️ & 🚀
+                       <span>© <span id="getfullyear"></span> DRIYUM. All rights reserved. </span> <a href="https://irfanamnzoor.in" class="text-white/40 hover:text-white text-sm" target="_blank">Developed by Irfan Manzoor</a>
                     </div>
                     <div class="flex gap-6">
                         <a href="#" class="text-white/40 hover:text-white text-sm">Privacy</a>
@@ -1876,7 +1883,7 @@
                 discount: 40,
                 stock: 85,
                 description: 'Interstellar crunch with banana flavor',
-                image: './images/banana-crisp-bites.webp',
+                image: './images/apple-crisp-bites.webp',
                 rating: 4.9,
                 reviews: 124
             },
@@ -1890,7 +1897,7 @@
                 discount: 22,
                 stock: 60,
                 description: 'apple slices with stardust seasoning',
-                image: './images/banana-crisp-bites.webp',
+                image: './images/guava-crisp-bites.webp',
                 rating: 4.7,
                 reviews: 89
             },
@@ -1904,7 +1911,7 @@
                 discount: 20,
                 stock: 40,
                 description: 'Multi-dimensional mango experience',
-                image: './images/banana-crisp-bites.webp',
+                image: './images/strawberry-crisp-bites.webp',
                 rating: 4.8,
                 reviews: 67
             },
@@ -1932,7 +1939,7 @@
                 discount: 22,
                 stock: 50,
                 description: 'Sweet potato with chili kick',
-                image: './images/banana-crisp-bites.webp',
+                image: './images/apple-crisp-bites.webp',
                 rating: 4.7,
                 reviews: 56
             },
@@ -1946,7 +1953,7 @@
                 discount: 20,
                 stock: 35,
                 description: 'Earthly beetroot chips',
-                image: './images/banana-crisp-bites.webp',
+                image: './images/pineapple-crisp-bites.webp',
                 rating: 4.9,
                 reviews: 45
             },
@@ -1960,7 +1967,7 @@
                 discount: 25,
                 stock: 25,
                 description: 'Explosive spicy flavor combination',
-                image: './images/banana-crisp-bites.webp',
+                image: './images/strawberry-crisp-bites.webp',
                 rating: 4.8,
                 reviews: 78
             },
@@ -1974,7 +1981,7 @@
                 discount: 29,
                 stock: 45,
                 description: 'Colorful veggie assortment',
-                image: './images/banana-crisp-bites.webp',
+                image: './images/pineapple-crisp-bites.webp',
                 rating: 5.0,
                 reviews: 203
             }
@@ -2019,14 +2026,14 @@
                 name: 'KALE KRUNCH',
                 price: 299,
                 quantity: 1,
-                image: './images/banana-crisp-bites.webp'
+                image: './images/strawberry-crisp-bites.webp'
             },
             {
                 id: 7,
                 name: 'FIERY CHILI SUPERNOVA',
                 price: 449,
                 quantity: 1,
-                image: './images/banana-crisp-bites.webp'
+                image: './images/apple-crisp-bites.webp'
             }
         ];
         
@@ -2215,7 +2222,7 @@
                                 <button onclick="addToCart(${product.id})" class="btn-add-to-cart flex-1">
                                     Add to Cart
                                 </button>
-                                <button onclick="quickBuy(${product.id})" class="btn-quick-buy">
+                                <button onclick="window.location.href='./pages/product-detail.html?id=${product.id}'" class="btn-quick-buy">
                                     <i class="fas fa-bolt"></i>
                                 </button>
                             </div>

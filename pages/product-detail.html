@@ -1,0 +1,3146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIYUM | Galactic Banana Blast - Premium Plant-Based Snacks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Fredoka+One&family=Montserrat:wght@800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik+Glitch&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <style>
+        /* Copy EXACT styles from shop.html */
+        :root {
+            --primary: #19dc7e;
+            --primary-dark: #14b86e;
+            --secondary: #FF6B6B;
+            --accent: #FFD166;
+            --dark: #1a1a2e;
+            --light: #FFFBEB;
+            --gradient: linear-gradient(135deg, #19dc7e 0%, #00ff88 100%);
+            --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        
+        * {
+            font-family: 'Space Grotesk', 'Poppins', sans-serif;
+        }
+        
+        .logo-font {
+            font-family: 'Fredoka One', cursive;
+        }
+        
+        .title-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .fun-font {
+            font-family: 'Bungee', cursive;
+        }
+        
+        .glitch-font {
+            font-family: 'Rubik Glitch', cursive;
+        }
+        
+        /* Advanced 3D Effects */
+        .card-3d {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-3d:hover {
+            transform: rotateY(15deg) rotateX(5deg) translateY(-10px);
+        }
+        
+        .card-inner {
+            transform: translateZ(20px);
+        }
+        
+        /* Liquid Gradient Animation */
+        .liquid-bg {
+            background: linear-gradient(45deg, var(--primary), var(--accent), var(--secondary), var(--primary));
+            background-size: 400% 400%;
+            animation: liquidAnimation 8s ease infinite;
+        }
+        
+        @keyframes liquidAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Glitch Effect */
+        .glitch-text {
+            position: relative;
+            color: white;
+        }
+        
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00ff;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: -2px 0 #00ffff;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        
+        /* Particle Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(25, 220, 126, 0.2);
+            border-radius: 50%;
+            animation: float-particle linear infinite;
+        }
+        
+        @keyframes float-particle {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
+        }
+        
+        /* Morphing Shape */
+        .morphing-shape {
+            animation: morph 20s ease-in-out infinite;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+        
+        /* Neon Glow */
+        .neon-glow {
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px var(--primary),
+                0 0 40px var(--primary),
+                0 0 80px var(--primary);
+            animation: neon-flicker 3s infinite alternate;
+        }
+        
+        @keyframes neon-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 20px var(--primary),
+                    0 0 40px var(--primary),
+                    0 0 80px var(--primary);
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+        
+        /* Scroll-triggered Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px) rotateX(45deg);
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient);
+            border-radius: 10px;
+            border: 3px solid var(--dark);
+        }
+        
+        /* Button Effects */
+        .btn-holographic {
+            background: linear-gradient(45deg, transparent 50%, rgba(255,255,255,0.1) 50%);
+            background-size: 200% 200%;
+            background-position: 0% 0%;
+            transition: background-position 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-holographic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-holographic:hover::before {
+            left: 100%;
+        }
+        
+        .btn-holographic:hover {
+            background-position: 100% 100%;
+            transform: translateY(-2px);
+        }
+        
+        /* Product Card Hover */
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+            z-index: 1;
+        }
+        
+        .product-card:hover::before {
+            left: 100%;
+        }
+        
+        /* Loading Animation */
+        .loading-ring {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .loading-ring:after {
+            content: " ";
+            display: block;
+            width: 64px;
+            height: 64px;
+            margin: 8px;
+            border-radius: 50%;
+            border: 6px solid var(--primary);
+            border-color: var(--primary) transparent var(--primary) transparent;
+            animation: loading-ring 1.2s linear infinite;
+        }
+        
+        @keyframes loading-ring {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Glass Morphism */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Shimmer Effect */
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        /* Custom Cursor */
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.3s ease;
+        }
+        
+        .cursor-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+        }
+        
+        /* Stock Indicator */
+        .stock-indicator-dark {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .stock-fill-dark {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), #00ff88);
+            border-radius: 3px;
+            transition: width 1s ease;
+        }
+        
+        .stock-pulse-dark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        /* Notification System */
+        .notification-dark {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(25, 220, 126, 0.2);
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Image Zoom */
+        .image-zoom-dark {
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        
+        .image-zoom-dark img {
+            transition: transform 0.6s ease;
+        }
+        
+        .image-zoom-dark:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+            color: black;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(25, 220, 126, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: black;
+            transform: translateY(-2px);
+        }
+        
+        .btn-action {
+            background: rgba(25, 220, 126, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 1px solid var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-action:hover {
+            background: var(--primary);
+            color: black;
+        }
+        
+        .btn-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-icon:hover {
+            background: var(--primary);
+            color: black;
+            transform: scale(1.1);
+        }
+        
+        /* Badge Styles */
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .discount-badge {
+            background: var(--secondary);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        /* Quick Action Buttons */
+        .quick-action-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.8);
+            border: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-action-btn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+        
+        /* Add to Cart Button */
+        .btn-add-to-cart {
+            background: rgba(25, 220, 126, 0.2);
+            color: white;
+            padding: 12px;
+            border-radius: 25px;
+            border: 1px solid var(--primary);
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-add-to-cart:hover {
+            background: var(--primary);
+            color: black;
+        }
+        
+        /* Quick Buy Button */
+        .btn-quick-buy {
+            width: 48px;
+            height: 48px;
+            border-radius: 25px;
+            background: var(--secondary);
+            border: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-quick-buy:hover {
+            background: #ff5252;
+            transform: scale(1.1);
+        }
+        
+        /* Navigation Links */
+        .nav-link {
+            text-decoration: none;
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        /* Icon Buttons */
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .icon-btn:hover {
+            background: var(--primary);
+            color: black;
+            transform: scale(1.1);
+        }
+        
+        /* Category Filter */
+        .category-filter {
+            padding: 8px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category-filter.active {
+            background: var(--primary);
+            color: black;
+            border-color: var(--primary);
+        }
+        
+        .category-filter:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Feature Card */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(25, 220, 126, 0.1);
+        }
+        
+        /* Testimonial Styles */
+        .testimonial-carousel {
+            position: relative;
+            min-height: 300px;
+        }
+        
+        .testimonial-slide {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.5s ease;
+        }
+        
+        .testimonial-slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .carousel-nav:hover {
+            background: var(--primary);
+            color: black;
+        }
+        
+        .carousel-nav.prev {
+            left: -25px;
+        }
+        
+        .carousel-nav.next {
+            right: -25px;
+        }
+        
+        /* CTA Buttons */
+        .btn-cta-primary {
+            background: linear-gradient(45deg, var(--primary), #00ff88);
+            color: black;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(25, 220, 126, 0.5);
+        }
+        
+        .btn-cta-secondary {
+            background: transparent;
+            color: white;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: bold;
+            border: 2px solid white;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-cta-secondary:hover {
+            background: white;
+            color: black;
+        }
+        
+        /* Social Buttons */
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn:hover {
+            background: var(--primary);
+            color: black;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer Links */
+        .footer-link {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        /* Flavor Option */
+        .flavor-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .flavor-option.active {
+            border-color: var(--primary);
+            background: rgba(25, 220, 126, 0.1);
+        }
+        
+        .flavor-option:hover:not(.active) {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Mobile Menu Styles */
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .mobile-nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .mobile-nav-link.active {
+            background: rgba(25, 220, 126, 0.2);
+            color: #19dc7e;
+            border-left: 3px solid #19dc7e;
+        }
+        
+        /* Mobile Category Accordion */
+        .mobile-category-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-category-content.active {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+        
+        .mobile-category-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-category-arrow.active {
+            transform: rotate(180deg);
+        }
+        
+        /* Product Detail Page Specific Styles */
+        
+        /* Gallery Navigation */
+        .gallery-nav {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-nav.active {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .gallery-nav:hover:not(.active) {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Quantity Selector */
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 8px;
+        }
+        
+        .quantity-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: black;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .quantity-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .quantity-input {
+            width: 60px;
+            background: transparent;
+            border: none;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .quantity-input:focus {
+            outline: none;
+        }
+        
+        /* Tabs */
+        .product-tab {
+            padding: 16px 32px;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .product-tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        
+        .product-tab:hover:not(.active) {
+            color: white;
+        }
+        
+        /* Review Stars */
+        .review-stars {
+            display: flex;
+            gap: 4px;
+        }
+        
+        .review-star {
+            color: #FFD166;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .review-star:hover {
+            transform: scale(1.2);
+        }
+        
+        /* Nutritional Info */
+        .nutrition-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .nutrition-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        
+        .nutrition-progress {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        
+        .nutrition-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+        
+        /* Feature Grid */
+        .feature-grid-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-grid-item:hover {
+            background: rgba(25, 220, 126, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Tab Content Styles */
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* FAQ Styles */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-answer.open {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .title-font {
+                font-size: 2.5rem;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 12px 24px;
+            }
+            
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .carousel-nav.prev {
+                left: 10px;
+            }
+            
+            .carousel-nav.next {
+                right: 10px;
+            }
+            
+            /* Mobile Responsive Adjustments */
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .icon-btn {
+                width: 36px;
+                height: 36px;
+            }
+            
+            #cartCount {
+                font-size: 10px;
+                width: 16px;
+                height: 16px;
+            }
+            
+            .gallery-nav {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .product-tab {
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-font {
+                font-size: 1.5rem;
+            }
+            
+            .action-buttons {
+                gap: 0.5rem;
+            }
+            
+            .product-tab {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+        }
+        
+        /* Smooth Transitions */
+        * {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+    <!-- Notification Container -->
+    <div id="notificationContainer" class="fixed top-4 right-4 z-50 space-y-2"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
+    
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#19dc7e] via-[#FFD166] to-[#FF6B6B] z-40 transition-all duration-200" id="progressBar"></div>
+    
+ 
+    
+    <!-- Ultimate Navigation -->
+    <nav class="sticky top-0 z-30 glass-effect border-b border-white/10">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo with Animation -->
+                <a href="../index.html" class="logo-font text-3xl relative group">
+                    <img class="text-white relative z-10" src="../singlelogo.png" width="100" />
+                    <span class="absolute -inset-2 bg-[#19dc7e] blur-xl opacity-20 group-hover:opacity-40 transition-opacity"></span>
+                    <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#19dc7e] group-hover:w-full transition-all duration-300"></div>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="../index.html" class="nav-link group relative">
+                        <span class="text-white/80 group-hover:text-white transition-colors">HOME</span>
+                        <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#19dc7e] group-hover:w-full transition-all duration-300"></div>
+                    </a>
+                    
+                    <a href="./shop.html" class="nav-link group relative">
+                        <span class="text-white/80 group-hover:text-white transition-colors">SHOP</span>
+                        <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#19dc7e] group-hover:w-full transition-all duration-300"></div>
+                    </a>
+                    
+                    <!-- Mega Menu -->
+                    <div class="group relative">
+                        <button class="nav-link flex items-center gap-2 group">
+                            <span class="text-white/80 group-hover:text-white transition-colors">CATEGORIES</span>
+                            <i class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                        </button>
+                        
+                        <div class="absolute top-full left-0 w-screen max-w-4xl bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-4 group-hover:translate-y-0">
+                            <div class="grid grid-cols-3 gap-6">
+                                <div>
+                                    <h4 class="text-[#19dc7e] font-bold mb-3">FRUIT CHIPS</h4>
+                                    <div class="space-y-2">
+                                        <a href="./shop.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Apple Crisp</a>
+                                        <a href="./shop.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Banana Blast</a>
+                                        <a href="./shop.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Mango Tango</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-[#FFD166] font-bold mb-3">VEGGIE CRISPS</h4>
+                                    <div class="space-y-2">
+                                        <a href="./shop.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Kale Krunch</a>
+                                        <a href="./shop.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Sweet Potato</a>
+                                        <a href="./shop.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Beetroot Boost</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-[#FF6B6B] font-bold mb-3">SEASONAL</h4>
+                                    <div class="space-y-2">
+                                        <a href="./shop.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Winter Special</a>
+                                        <a href="./shop.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Summer Crunch</a>
+                                        <a href="./shop.html" class="block text-white/70 hover:text-white hover:translate-x-2 transition-all">Festive Flavors</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="./about.html" class="nav-link group relative">
+                        <span class="text-white/80 group-hover:text-white transition-colors">ABOUT</span>
+                        <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#19dc7e] group-hover:w-full transition-all duration-300"></div>
+                    </a>
+                    
+                    <a href="./contact.html" class="nav-link group relative">
+                        <span class="text-white/80 group-hover:text-white transition-colors">CONTACT</span>
+                        <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#19dc7e] group-hover:w-full transition-all duration-300"></div>
+                    </a>
+                </div>
+                
+                <!-- Action Icons -->
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <!-- Search Button -->
+                    <button class="icon-btn group hidden sm:flex" onclick="openSearch()">
+                        <i class="fas fa-search group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    
+                    <!-- Account Dropdown -->
+                    <div class="relative group hidden md:block">
+                        <button class="icon-btn group" onclick="toggleAccountMenu()">
+                            <i class="fas fa-user group-hover:text-[#19dc7e] transition-colors"></i>
+                        </button>
+                        
+                        <!-- Dropdown Menu -->
+                        <div id="accountMenu" class="absolute top-full right-0 mt-2 w-48 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-4 group-hover:translate-y-0 z-40">
+                            <div class="px-4 py-3 border-b border-white/10">
+                                <div class="font-bold text-white">Welcome!</div>
+                                <div class="text-sm text-white/60">Sign in to your account</div>
+                            </div>
+                            
+                            <a href="./login-register.html" class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 transition-colors">
+                                <i class="fas fa-sign-in-alt text-[#19dc7e]"></i>
+                                <span>Sign In</span>
+                            </a>
+                            <a href="./login-register.html" class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 transition-colors">
+                                <i class="fas fa-user-plus text-[#19dc7e]"></i>
+                                <span>Create Account</span>
+                            </a>
+                            
+                            <div class="border-t border-white/10 my-2"></div>
+                            
+                            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 transition-colors">
+                                <i class="fas fa-shopping-bag text-[#FFD166]"></i>
+                                <span>My Orders</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 transition-colors">
+                                <i class="fas fa-heart text-[#FF6B6B]"></i>
+                                <span>Wishlist</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Cart -->
+                    <button class="icon-btn group relative" onclick="openCart()">
+                        <i class="fas fa-shopping-bag group-hover:scale-110 transition-transform"></i>
+                        <span id="cartCount" class="absolute -top-1 -right-1 bg-[#19dc7e] text-black text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center">5</span>
+                    </button>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="icon-btn lg:hidden" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Enhanced Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 hidden transition-all duration-300">
+        <div class="h-full flex flex-col">
+            <!-- Mobile Menu Header -->
+            <div class="p-4 border-b border-white/10">
+                <div class="flex justify-between items-center">
+                    <img class="text-white relative z-10" src="../singlelogo.png" width="100" />
+                    <button onclick="toggleMobileMenu()" class="icon-btn text-2xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <!-- Quick Actions in Mobile Header -->
+                <div class="flex items-center justify-between mt-4">
+                    <!-- Mobile Search -->
+                    <button onclick="openSearch(); toggleMobileMenu();" class="flex items-center gap-2 text-white/80 hover:text-white transition-colors w-full">
+                        <i class="fas fa-search"></i>
+                        <span>Search</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Content -->
+            <div class="flex-1 overflow-y-auto p-4">
+                <!-- Main Navigation -->
+                <nav class="space-y-1">
+                    <a href="../index.html" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    
+                    <a href="./shop.html" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                        <i class="fas fa-store"></i>
+                        Shop All
+                    </a>
+                    
+                    <!-- Categories Accordion -->
+                    <div class="mobile-category">
+                        <button class="mobile-nav-link w-full text-left flex items-center justify-between" onclick="toggleMobileCategory()">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-th-large"></i>
+                                Categories
+                            </div>
+                            <i class="fas fa-chevron-down mobile-category-arrow"></i>
+                        </button>
+                        
+                        <div class="mobile-category-content">
+                            <div class="pl-10 space-y-1 mt-2">
+                                <a href="./shop.html" class="mobile-sub-link" onclick="toggleMobileMenu();">
+                                    <i class="fas fa-apple-alt text-[#19dc7e]"></i>
+                                    Fruit Chips
+                                </a>
+                                <a href="./shop.html" class="mobile-sub-link" onclick="toggleMobileMenu();">
+                                    <i class="fas fa-carrot text-[#FFD166]"></i>
+                                    Veggie Crisps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t border-white/10 my-4"></div>
+                    
+                    <!-- Account Section -->
+                    <div class="mb-4">
+                        <div class="text-xs uppercase text-white/40 mb-2">Account</div>
+                        <a href="./login-register.html" class="mobile-nav-link" onclick="toggleMobileMenu();">
+                            <i class="fas fa-sign-in-alt text-[#19dc7e]"></i>
+                            Sign In
+                        </a>
+                        <a href="./login-register.html" class="mobile-nav-link" onclick="toggleMobileMenu();">
+                            <i class="fas fa-user-plus text-[#19dc7e]"></i>
+                            Create Account
+                        </a>
+                    </div>
+                    
+                    <!-- Company Section -->
+                    <div class="mb-4">
+                        <div class="text-xs uppercase text-white/40 mb-2">Company</div>
+                        <a href="./about.html" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                            <i class="fas fa-info-circle"></i>
+                            About Us
+                        </a>
+                        <a href="./faq.html" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                            <i class="fas fa-question-circle"></i>
+                            FAQ
+                        </a>
+                        <a href="./contact.html" class="mobile-nav-link" onclick="toggleMobileMenu()">
+                            <i class="fas fa-phone"></i>
+                            Contact
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            
+            <!-- Mobile Footer -->
+            <div class="p-4 border-t border-white/10">
+                <div class="flex justify-center gap-4">
+                    <a href="#" class="text-white/60 hover:text-white">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#" class="text-white/60 hover:text-white">
+                        <i class="fab fa-facebook text-lg"></i>
+                    </a>
+                    <a href="#" class="text-white/60 hover:text-white">
+                        <i class="fab fa-twitter text-lg"></i>
+                    </a>
+                    <a href="#" class="text-white/60 hover:text-white">
+                        <i class="fab fa-tiktok text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Search Modal -->
+    <div id="searchModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="glass-effect rounded-2xl w-full max-w-2xl shadow-2xl transform transition-all duration-300 scale-95 opacity-0" id="searchModalContent">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold text-white">Search Snacks</h3>
+                    <button onclick="closeSearch()" class="p-2 hover:bg-white/10 rounded-lg transition-colors">
+                        <i class="fas fa-times text-gray-400"></i>
+                    </button>
+                </div>
+                
+                <div class="relative mb-6">
+                    <input type="text" id="searchInput" placeholder="What flavor are you craving? Try 'banana', 'spicy', or 'veggie'..." 
+                           class="bg-black/50 border border-white/10 w-full px-6 py-4 rounded-xl text-lg focus:border-[#19dc7e] focus:outline-none text-white">
+                    <button onclick="performSearch()" class="absolute right-3 top-3 p-3 bg-[#19dc7e] text-black rounded-lg hover:bg-[#14b86e] transition-colors">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <!-- Recent Searches -->
+                <div class="mb-6">
+                    <h4 class="font-medium text-white mb-3">Recent Searches</h4>
+                    <div class="flex flex-wrap gap-2" id="recentSearches">
+                        <button onclick="searchKeyword('banana')" class="px-4 py-2 bg-white/10 text-white rounded-full hover:bg-[#19dc7e] hover:text-black transition-colors">
+                            Banana Chips
+                        </button>
+                        <button onclick="searchKeyword('spicy')" class="px-4 py-2 bg-white/10 text-white rounded-full hover:bg-[#19dc7e] hover:text-black transition-colors">
+                            Spicy Snacks
+                        </button>
+                        <button onclick="searchKeyword('veggie')" class="px-4 py-2 bg-white/10 text-white rounded-full hover:bg-[#19dc7e] hover:text-black transition-colors">
+                            Veggie Crisps
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="fixed inset-y-0 right-0 z-50 w-full md:w-96 glass-effect shadow-2xl transform translate-x-full transition-transform duration-300">
+        <div class="h-full flex flex-col">
+            <!-- Cart Header -->
+            <div class="p-6 border-b border-white/10">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i class="fas fa-shopping-bag text-[#19dc7e]"></i>
+                        Your Cart
+                        <span id="cartItemCount" class="text-sm bg-[#19dc7e]/20 text-[#19dc7e] px-2 py-1 rounded-full">5 items</span>
+                    </h3>
+                    <button onclick="closeCart()" class="p-2 hover:bg-white/10 rounded-lg transition-colors">
+                        <i class="fas fa-times text-gray-400"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Cart Items -->
+            <div class="flex-1 overflow-y-auto p-6">
+                <!-- Empty State -->
+                <div id="emptyCart" class="hidden text-center py-12">
+                    <div class="text-6xl mb-4 text-gray-700">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Your cart is empty</h4>
+                    <p class="text-gray-500 mb-6">Add some crunchy snacks to get started!</p>
+                    <button onclick="closeCart(); window.location.href='./shop.html'" class="px-6 py-3 bg-[#19dc7e] text-black font-bold rounded-lg hover:bg-[#14b86e] transition-colors">
+                        Browse Snacks
+                    </button>
+                </div>
+                
+                <!-- Cart Items -->
+                <div id="cartItemsList" class="space-y-4">
+                    <!-- Items will be loaded here -->
+                </div>
+            </div>
+            
+            <!-- Cart Summary -->
+            <div class="border-t border-white/10 p-6 bg-black/50">
+                <div class="space-y-3 mb-6">
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">Subtotal</span>
+                        <span id="cartSubtotal" class="font-bold text-white">₹1,046</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">Shipping</span>
+                        <span id="cartShipping" class="font-bold text-[#19dc7e]">FREE</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">Discount</span>
+                        <span id="cartDiscount" class="font-bold text-[#FF6B6B]">-₹149</span>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-700 pt-4 mb-6">
+                    <div class="flex justify-between text-lg font-bold text-white">
+                        <span>Total</span>
+                        <span id="cartTotal">₹897</span>
+                    </div>
+                </div>
+                
+                <div class="space-y-3">
+                    <button onclick="checkout()" class="btn-primary w-full px-6 py-3 rounded-lg">
+                        Proceed to Checkout
+                    </button>
+                    <button onclick="continueShopping()" class="btn-secondary w-full px-6 py-3 rounded-lg">
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Product Breadcrumb -->
+    <section class="py-4 border-b border-white/10">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center text-sm text-white/60">
+                <a href="../index.html" class="hover:text-white transition-colors">Home</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <a href="./shop.html" class="hover:text-white transition-colors">Shop</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <a href="./shop.html" class="hover:text-white transition-colors">Fruit Chips</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <span class="text-[#19dc7e]">Galactic Banana Blast</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Product Detail Section -->
+    <section class="py-12 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Product Gallery -->
+                <div class="space-y-6">
+                    <!-- Main Image -->
+                    <div class="image-zoom-dark rounded-3xl overflow-hidden h-[500px]">
+                        <img id="mainImage" src="../images/banana-crisp-bites.webp" alt="Galactic Banana Blast" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 flex flex-col gap-2">
+                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                                BESTSELLER
+                            </span>
+                            <span class="bg-[#19dc7e] text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                                -40% OFF
+                            </span>
+                            <span class="bg-[#FFD166] text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                                NEW
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Thumbnail Gallery -->
+                    <div class="flex gap-4 overflow-x-auto pb-2">
+                        <div class="gallery-nav active" onclick="changeMainImage('../images/pineapple-crisp-bites.webp')">
+                            <img src="../images/pineapple-crisp-bites.webp" alt="Galactic Banana Blast" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="gallery-nav" onclick="changeMainImage('../images/pineapple-crisp-bites.webp')">
+                            <img src="../images/apple-crisp-bites.webp" alt="Packaging" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="gallery-nav" onclick="changeMainImage('../images/strawberry-crisp-bites.webp')">
+                            <img src="../images/strawberry-crisp-bites.webp" alt="Ingredients" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="gallery-nav" onclick="changeMainImage('../images/guava-crisp-bites.webp')">
+                            <img src="../images/guava-crisp-bites.webp" alt="Nutrition Facts" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Info -->
+                <div>
+                    <div class="mb-6">
+                        <h1 class="title-font text-4xl md:text-5xl mb-2">
+                            <span class="text-[#19dc7e]">GALACTIC</span> BANANA BLAST
+                        </h1>
+                        <p class="text-xl text-white/70">Interstellar crunch with real banana flavor</p>
+                    </div>
+                    
+                    <!-- Rating -->
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="flex items-center gap-2">
+                            <div class="flex text-[#FFD166]">
+                                ★★★★★
+                            </div>
+                            <span class="text-lg font-bold text-white">4.9</span>
+                        </div>
+                        <span class="text-white/60">(124 reviews)</span>
+                        <span class="text-[#19dc7e] flex items-center gap-1">
+                            <i class="fas fa-check-circle"></i>
+                            In Stock
+                        </span>
+                    </div>
+                    
+                    <!-- Price -->
+                    <div class="mb-8">
+                        <div class="flex items-center gap-4">
+                            <span class="text-4xl font-bold text-white">₹299</span>
+                            <span class="text-2xl text-white/40 line-through">₹499</span>
+                            <span class="bg-[#FF6B6B] text-white px-3 py-1 rounded-full font-bold">
+                                40% OFF
+                            </span>
+                        </div>
+                        <p class="text-white/60 mt-2">You save: ₹200</p>
+                    </div>
+                    
+                    <!-- Description -->
+                    <div class="mb-8">
+                        <p class="text-white/80 mb-4">
+                            Experience the ultimate space-age snacking with our Galactic Banana Blast! 
+                            Made from 100% real bananas and dusted with our secret stardust seasoning, 
+                            each bite transports you to a galaxy of flavor. Perfectly crispy, guilt-free, 
+                            and packed with plant-powered energy.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="feature-grid-item">
+                                <i class="fas fa-leaf text-[#19dc7e] text-xl"></i>
+                                <span>100% Vegan</span>
+                            </div>
+                            <div class="feature-grid-item">
+                                <i class="fas fa-seedling text-[#FFD166] text-xl"></i>
+                                <span>Gluten-Free</span>
+                            </div>
+                            <div class="feature-grid-item">
+                                <i class="fas fa-fire text-[#FF6B6B] text-xl"></i>
+                                <span>Zero Cholesterol</span>
+                            </div>
+                            <div class="feature-grid-item">
+                                <i class="fas fa-bolt text-white text-xl"></i>
+                                <span>High in Fiber</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Flavor Variants -->
+                    <div class="mb-8">
+                        <h3 class="font-bold text-white mb-4">Choose Flavor:</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="flavor-option active">
+                                <div class="w-8 h-8 rounded-full bg-[#FFD166]"></div>
+                                <span class="text-sm">Original</span>
+                            </div>
+                            <div class="flavor-option">
+                                <div class="w-8 h-8 rounded-full bg-[#FF6B6B]"></div>
+                                <span class="text-sm">Spicy</span>
+                            </div>
+                            <div class="flavor-option">
+                                <div class="w-8 h-8 rounded-full bg-[#9B5DE5]"></div>
+                                <span class="text-sm">Galactic Dust</span>
+                            </div>
+                            <div class="flavor-option">
+                                <div class="w-8 h-8 rounded-full bg-[#00BBF9]"></div>
+                                <span class="text-sm">Cosmic Sweet</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Package Size -->
+                    <div class="mb-8">
+                        <h3 class="font-bold text-white mb-4">Package Size:</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <button class="px-6 py-3 rounded-xl bg-[#19dc7e] text-black font-bold">
+                                50g - ₹199
+                            </button>
+                            <button class="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors">
+                                100g - ₹299
+                            </button>
+                            <button class="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors">
+                                200g - ₹499
+                            </button>
+                            <button class="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors">
+                                500g - ₹999
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Add to Cart Section -->
+                    <div class="mb-8">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <!-- Quantity Selector -->
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="changeQuantity(-1)">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="10" 
+                                       onchange="updateQuantity(this.value)">
+                                <button class="quantity-btn" onclick="changeQuantity(1)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- Action Buttons -->
+                            <button onclick="addToCart()" class="btn-primary flex-1 flex items-center justify-center gap-2">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                            <button onclick="buyNow()" class="btn-secondary flex-1 flex items-center justify-center gap-2">
+                                <i class="fas fa-bolt"></i>
+                                Buy Now
+                            </button>
+                        </div>
+                        
+                        <!-- Quick Actions -->
+                        <div class="flex gap-4 mt-4">
+                            <button onclick="addToWishlist()" class="flex items-center gap-2 text-white/60 hover:text-white transition-colors">
+                                <i class="far fa-heart"></i>
+                                Add to Wishlist
+                            </button>
+                            <button onclick="shareProduct()" class="flex items-center gap-2 text-white/60 hover:text-white transition-colors">
+                                <i class="fas fa-share-alt"></i>
+                                Share
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Stock & Delivery -->
+                    <div class="glass-effect rounded-2xl p-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fas fa-truck text-[#19dc7e]"></i>
+                                    <span class="font-bold">Free Delivery</span>
+                                </div>
+                                <p class="text-sm text-white/60">On orders above ₹499</p>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fas fa-shipping-fast text-[#FFD166]"></i>
+                                    <span class="font-bold">Fast Shipping</span>
+                                </div>
+                                <p class="text-sm text-white/60">Delivery in 2-3 days</p>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fas fa-undo text-[#FF6B6B]"></i>
+                                    <span class="font-bold">Easy Returns</span>
+                                </div>
+                                <p class="text-sm text-white/60">30-day return policy</p>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i class="fas fa-shield-alt text-white"></i>
+                                    <span class="font-bold">Quality Guarantee</span>
+                                </div>
+                                <p class="text-sm text-white/60">100% satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 morphing-shape opacity-5"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 h-64 morphing-shape opacity-5" style="animation-delay: -10s"></div>
+        </div>
+    </section>
+    
+    <!-- Product Tabs Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap border-b border-white/10 mb-8">
+                <button class="product-tab active" data-tab="description">
+                    <i class="fas fa-info-circle mr-2"></i>Description
+                </button>
+                <button class="product-tab" data-tab="nutrition">
+                    <i class="fas fa-apple-alt mr-2"></i>Nutrition
+                </button>
+                <button class="product-tab" data-tab="ingredients">
+                    <i class="fas fa-flask mr-2"></i>Ingredients
+                </button>
+                <button class="product-tab" data-tab="how-to-use">
+                    <i class="fas fa-book-open mr-2"></i>How to Use
+                </button>
+                <button class="product-tab" data-tab="reviews">
+                    <i class="fas fa-star mr-2"></i>Reviews <span class="bg-white/20 px-2 py-1 rounded-full text-xs ml-2">124</span>
+                </button>
+                <button class="product-tab" data-tab="faq">
+                    <i class="fas fa-question-circle mr-2"></i>FAQ
+                </button>
+            </div>
+            
+            <!-- Tab Content -->
+            <div id="tabContent">
+                <!-- Description Tab -->
+                <div id="description-tab" class="tab-content active">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Product Story</h3>
+                            <p class="text-white/80 mb-4">
+                                Our Galactic Banana Blast isn't just another snack—it's an intergalactic 
+                                experience! Born from our obsession with creating the perfect crunchy snack, 
+                                we spent months perfecting this recipe to capture the essence of ripe bananas 
+                                while adding our signature "stardust" seasoning.
+                            </p>
+                            <p class="text-white/80 mb-4">
+                                Each banana is carefully selected from sustainable farms, thinly sliced, 
+                                and slowly baked at low temperatures to preserve nutrients and maximize 
+                                crunch. The result? A snack that's out of this world!
+                            </p>
+                            
+                            <h4 class="text-xl font-bold text-white mb-3 mt-6">Key Features:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-[#19dc7e] mt-1"></i>
+                                    <span>Made from 100% real bananas, no artificial flavors</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-[#19dc7e] mt-1"></i>
+                                    <span>Slow-baked for maximum crunch and nutrition</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-[#19dc7e] mt-1"></i>
+                                    <span>Zero cholesterol and low in saturated fat</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-[#19dc7e] mt-1"></i>
+                                    <span>Perfect source of natural energy and fiber</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-[#19dc7e] mt-1"></i>
+                                    <span>Eco-friendly packaging that's 100% recyclable</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <div class="glass-effect rounded-2xl p-6">
+                                <h4 class="text-xl font-bold text-white mb-4">Perfect For:</h4>
+                                <div class="space-y-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-12 h-12 rounded-full bg-[#19dc7e]/20 flex items-center justify-center">
+                                            <i class="fas fa-briefcase text-[#19dc7e]"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-bold text-white">Office Snacking</h5>
+                                            <p class="text-sm text-white/60">Healthy alternative to chips</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-12 h-12 rounded-full bg-[#FFD166]/20 flex items-center justify-center">
+                                            <i class="fas fa-hiking text-[#FFD166]"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-bold text-white">Outdoor Adventures</h5>
+                                            <p class="text-sm text-white/60">Lightweight & energy-packed</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-12 h-12 rounded-full bg-[#FF6B6B]/20 flex items-center justify-center">
+                                            <i class="fas fa-graduation-cap text-[#FF6B6B]"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-bold text-white">School Lunch</h5>
+                                            <p class="text-sm text-white/60">Kid-friendly & nutritious</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-12 h-12 rounded-full bg-[#9B5DE5]/20 flex items-center justify-center">
+                                            <i class="fas fa-gamepad text-[#9B5DE5]"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-bold text-white">Gaming Sessions</h5>
+                                            <p class="text-sm text-white/60">No mess, all taste</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nutrition Tab -->
+                <div id="nutrition-tab" class="tab-content">
+                    <div class="glass-effect rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6">Nutritional Information</h3>
+                        <p class="text-white/60 mb-6">Per 50g serving</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-bold text-white">Calories</span>
+                                        <span class="font-bold text-[#19dc7e]">210 kcal</span>
+                                    </div>
+                                    <div class="nutrition-progress">
+                                        <div class="nutrition-fill bg-[#19dc7e]" style="width: 42%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-bold text-white">Total Fat</span>
+                                        <span class="font-bold text-white">0.5g</span>
+                                    </div>
+                                    <div class="nutrition-progress">
+                                        <div class="nutrition-fill bg-[#FFD166]" style="width: 8%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-bold text-white">Saturated Fat</span>
+                                        <span class="font-bold text-white">0g</span>
+                                    </div>
+                                    <div class="nutrition-progress">
+                                        <div class="nutrition-fill bg-green-400" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-bold text-white">Trans Fat</span>
+                                        <span class="font-bold text-white">0g</span>
+                                    </div>
+                                    <div class="nutrition-progress">
+                                        <div class="nutrition-fill bg-green-400" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-bold text-white">Carbohydrates</span>
+                                        <span class="font-bold text-white">52g</span>
+                                    </div>
+                                    <div class="nutrition-progress">
+                                        <div class="nutrition-fill bg-[#FF6B6B]" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-bold text-white">Dietary Fiber</span>
+                                        <span class="font-bold text-white">6g</span>
+                                    </div>
+                                    <div class="nutrition-progress">
+                                        <div class="nutrition-fill bg-purple-400" style="width: 24%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-bold text-white">Sugars</span>
+                                        <span class="font-bold text-white">28g</span>
+                                    </div>
+                                    <div class="nutrition-progress">
+                                        <div class="nutrition-fill bg-yellow-400" style="width: 56%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-bold text-white">Protein</span>
+                                        <span class="font-bold text-white">2g</span>
+                                    </div>
+                                    <div class="nutrition-progress">
+                                        <div class="nutrition-fill bg-blue-400" style="width: 4%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 p-4 bg-black/30 rounded-xl">
+                            <p class="text-white/80">
+                                <i class="fas fa-info-circle text-[#19dc7e] mr-2"></i>
+                                <strong>Note:</strong> Percent Daily Values are based on a 2,000 calorie diet. 
+                                Your daily values may be higher or lower depending on your calorie needs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ingredients Tab -->
+                <div id="ingredients-tab" class="tab-content">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-6">What's Inside?</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl">
+                                    <span class="font-bold text-white">Bananas</span>
+                                    <span class="text-[#19dc7e] font-bold">95%</span>
+                                </div>
+                                <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl">
+                                    <span class="font-bold text-white">Coconut Oil</span>
+                                    <span class="text-[#FFD166]">3%</span>
+                                </div>
+                                <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl">
+                                    <span class="font-bold text-white">Himalayan Salt</span>
+                                    <span class="text-white/60">1%</span>
+                                </div>
+                                <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl">
+                                    <span class="font-bold text-white">Stardust Seasoning</span>
+                                    <span class="text-[#9B5DE5]">1%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <h4 class="text-xl font-bold text-white mb-4">Our Secret: Stardust Seasoning</h4>
+                                <p class="text-white/80">
+                                    Our proprietary blend of natural spices including cinnamon, 
+                                    turmeric, and a hint of galaxy-approved magic that makes 
+                                    every bite truly cosmic!
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="glass-effect rounded-2xl p-6">
+                                <h4 class="text-xl font-bold text-white mb-4">What We Don't Use:</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-times-circle text-[#FF6B6B]"></i>
+                                        <span>No Artificial Colors</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-times-circle text-[#FF6B6B]"></i>
+                                        <span>No Preservatives</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-times-circle text-[#FF6B6B]"></i>
+                                        <span>No MSG</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-times-circle text-[#FF6B6B]"></i>
+                                        <span>No Trans Fats</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-times-circle text-[#FF6B6B]"></i>
+                                        <span>No Animal Products</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-8">
+                                    <h4 class="text-xl font-bold text-white mb-4">Certifications</h4>
+                                    <div class="flex flex-wrap gap-3">
+                                        <span class="px-3 py-2 bg-[#19dc7e]/20 text-[#19dc7e] rounded-lg">Vegan</span>
+                                        <span class="px-3 py-2 bg-[#FFD166]/20 text-[#FFD166] rounded-lg">Gluten-Free</span>
+                                        <span class="px-3 py-2 bg-white/20 text-white rounded-lg">Non-GMO</span>
+                                        <span class="px-3 py-2 bg-purple-500/20 text-purple-300 rounded-lg">Organic</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- How to Use Tab -->
+                <div id="how-to-use-tab" class="tab-content">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="w-20 h-20 rounded-full bg-[#19dc7e]/20 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-sun text-[#19dc7e] text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-white mb-2">Store Properly</h4>
+                            <p class="text-white/60">Keep in a cool, dry place away from direct sunlight</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-20 h-20 rounded-full bg-[#FFD166]/20 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-utensils text-[#FFD166] text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-white mb-2">Serving Ideas</h4>
+                            <p class="text-white/60">Enjoy as is, or crush over yogurt, ice cream, or salads</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-20 h-20 rounded-full bg-[#FF6B6B]/20 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-heart text-[#FF6B6B] text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-white mb-2">Best Enjoyed</h4>
+                            <p class="text-white/60">Within 3 months of opening for maximum freshness</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 glass-effect rounded-2xl p-6">
+                        <h4 class="text-xl font-bold text-white mb-4">Creative Recipes</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h5 class="font-bold text-white mb-2">Banana Blast Smoothie Bowl</h5>
+                                <p class="text-white/60 mb-3">Crush over your favorite smoothie bowl for added crunch</p>
+                                <div class="flex items-center text-sm text-white/40">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span>Prep time: 5 mins</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-white mb-2">Cosmic Trail Mix</h5>
+                                <p class="text-white/60 mb-3">Mix with nuts, seeds, and dried fruits for space fuel</p>
+                                <div class="flex items-center text-sm text-white/40">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span>Prep time: 2 mins</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reviews Tab -->
+                <div id="reviews-tab" class="tab-content">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Review Stats -->
+                        <div class="lg:col-span-1">
+                            <div class="glass-effect rounded-2xl p-6">
+                                <h3 class="text-2xl font-bold text-white mb-6">Customer Reviews</h3>
+                                
+                                <div class="text-center mb-6">
+                                    <div class="text-5xl font-bold text-white mb-2">4.9</div>
+                                    <div class="flex justify-center text-[#FFD166] mb-2">
+                                        ★★★★★
+                                    </div>
+                                    <p class="text-white/60">Based on 124 reviews</p>
+                                </div>
+                                
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-sm">5 stars</span>
+                                        <div class="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-[#FFD166] rounded-full" style="width: 85%"></div>
+                                        </div>
+                                        <span class="text-sm">85%</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-sm">4 stars</span>
+                                        <div class="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-[#FFD166]" style="width: 12%"></div>
+                                        </div>
+                                        <span class="text-sm">12%</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-sm">3 stars</span>
+                                        <div class="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-[#FFD166]" style="width: 2%"></div>
+                                        </div>
+                                        <span class="text-sm">2%</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-sm">2 stars</span>
+                                        <div class="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-[#FFD166]" style="width: 1%"></div>
+                                        </div>
+                                        <span class="text-sm">1%</span>
+                                    </div>
+                                </div>
+                                
+                                <button onclick="showReviewForm()" class="btn-primary w-full mt-6">
+                                    <i class="fas fa-pen mr-2"></i>Write a Review
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Reviews List -->
+                        <div class="lg:col-span-2">
+                            <!-- Review Form (Initially Hidden) -->
+                            <div id="reviewForm" class="glass-effect rounded-2xl p-6 mb-6 hidden">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h4 class="text-xl font-bold text-white">Write Your Review</h4>
+                                    <button onclick="hideReviewForm()" class="icon-btn">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-white mb-2">Your Rating</label>
+                                        <div class="review-stars text-2xl" id="reviewStars">
+                                            <i class="review-star far fa-star" data-rating="1"></i>
+                                            <i class="review-star far fa-star" data-rating="2"></i>
+                                            <i class="review-star far fa-star" data-rating="3"></i>
+                                            <i class="review-star far fa-star" data-rating="4"></i>
+                                            <i class="review-star far fa-star" data-rating="5"></i>
+                                        </div>
+                                        <input type="hidden" id="selectedRating" value="0">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-white mb-2">Your Name</label>
+                                        <input type="text" id="reviewName" 
+                                               class="bg-black/50 border border-white/10 w-full px-4 py-3 rounded-xl focus:border-[#19dc7e] focus:outline-none text-white"
+                                               placeholder="Enter your name">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-white mb-2">Review Title</label>
+                                        <input type="text" id="reviewTitle" 
+                                               class="bg-black/50 border border-white/10 w-full px-4 py-3 rounded-xl focus:border-[#19dc7e] focus:outline-none text-white"
+                                               placeholder="Summarize your experience">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-white mb-2">Your Review</label>
+                                        <textarea id="reviewText" rows="4"
+                                                  class="bg-black/50 border border-white/10 w-full px-4 py-3 rounded-xl focus:border-[#19dc7e] focus:outline-none text-white"
+                                                  placeholder="Share your thoughts about this product..."></textarea>
+                                    </div>
+                                    
+                                    <button onclick="submitReview()" class="btn-primary w-full">
+                                        Submit Review
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Reviews List -->
+                            <div class="space-y-6" id="reviewsList">
+                                <!-- Reviews will be loaded here -->
+                            </div>
+                            
+                            <!-- Load More Button -->
+                            <div class="text-center mt-8">
+                                <button onclick="loadMoreReviews()" class="btn-secondary">
+                                    <i class="fas fa-arrow-down mr-2"></i>Load More Reviews
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Tab -->
+                <div id="faq-tab" class="tab-content">
+                    <div class="max-w-3xl mx-auto">
+                        <h3 class="text-2xl font-bold text-white mb-8">Frequently Asked Questions</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="faq-item glass-effect rounded-xl p-6">
+                                <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                                    <h4 class="font-bold text-white">Is this product really vegan?</h4>
+                                    <i class="fas fa-chevron-down transition-transform"></i>
+                                </div>
+                                <div class="faq-answer mt-4 hidden">
+                                    <p class="text-white/80">
+                                        Absolutely! Our Galactic Banana Blast is 100% plant-based. 
+                                        We use only bananas, coconut oil, and natural seasonings. 
+                                        No animal products or by-products are used in any stage of production.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item glass-effect rounded-xl p-6">
+                                <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                                    <h4 class="font-bold text-white">How long does shipping take?</h4>
+                                    <i class="fas fa-chevron-down transition-transform"></i>
+                                </div>
+                                <div class="faq-answer mt-4 hidden">
+                                    <p class="text-white/80">
+                                        Most orders are delivered within 2-3 business days. 
+                                        We offer express shipping options at checkout for faster delivery.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item glass-effect rounded-xl p-6">
+                                <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                                    <h4 class="font-bold text-white">What's the shelf life?</h4>
+                                    <i class="fas fa-chevron-down transition-transform"></i>
+                                </div>
+                                <div class="faq-answer mt-4 hidden">
+                                    <p class="text-white/80">
+                                        Unopened packages have a shelf life of 6 months. 
+                                        Once opened, we recommend consuming within 3 months for optimal freshness.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item glass-effect rounded-xl p-6">
+                                <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                                    <h4 class="font-bold text-white">Can I return the product if I don't like it?</h4>
+                                    <i class="fas fa-chevron-down transition-transform"></i>
+                                </div>
+                                <div class="faq-answer mt-4 hidden">
+                                    <p class="text-white/80">
+                                        Yes! We offer a 30-day satisfaction guarantee. 
+                                        If you're not completely happy with your purchase, contact our 
+                                        customer support team for a full refund or exchange.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="faq-item glass-effect rounded-xl p-6">
+                                <div class="flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                                    <h4 class="font-bold text-white">Is this suitable for children?</h4>
+                                    <i class="fas fa-chevron-down transition-transform"></i>
+                                </div>
+                                <div class="faq-answer mt-4 hidden">
+                                    <p class="text-white/80">
+                                        Yes! Our Galactic Banana Blast is kid-friendly and makes a 
+                                        healthy alternative to traditional chips. However, as with any 
+                                        snack, it should be consumed as part of a balanced diet.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Related Products -->
+    <section class="py-16 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 scroll-reveal">
+                <h2 class="title-font text-4xl md:text-5xl mb-4">
+                    <span class="text-[#FFD166]">YOU MAY</span> ALSO LIKE
+                </h2>
+                <p class="text-xl text-white/60 max-w-2xl mx-auto">
+                    Explore other cosmic flavors from our galaxy
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Related Product 1 -->
+                <div class="scroll-reveal">
+                    <div class="glass-effect rounded-2xl overflow-hidden border border-white/10 hover:border-[#19dc7e]/30 transition-all duration-500 group h-full">
+                        <div class="relative image-zoom-dark h-48">
+                            <img src="../images/banana-crisp-bites.webp" alt="Nebula Apple Crunch" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            
+                            <div class="absolute top-3 left-3">
+                                <span class="bg-[#19dc7e] text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                                    -22% OFF
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4">
+                            <h3 class="font-bold text-white text-lg mb-1">NEBULA APPLE CRUNCH</h3>
+                            <p class="text-gray-400 text-sm mb-3">Crispy apple slices with stardust</p>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <span class="text-xl font-bold text-white">₹349</span>
+                                    <span class="text-gray-500 line-through ml-2">₹449</span>
+                                </div>
+                            </div>
+                            
+                            <button onclick="window.location.href='./product-detail.html'" class="btn-add-to-cart w-full">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Related Product 2 -->
+                <div class="scroll-reveal" style="animation-delay: 0.1s">
+                    <div class="glass-effect rounded-2xl overflow-hidden border border-white/10 hover:border-[#19dc7e]/30 transition-all duration-500 group h-full">
+                        <div class="relative image-zoom-dark h-48">
+                            <img src="../images/banana-crisp-bites.webp" alt="Fiery Chili Supernova" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            
+                            <div class="absolute top-3 left-3">
+                                <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                                    HOT
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4">
+                            <h3 class="font-bold text-white text-lg mb-1">FIERY CHILI SUPERNOVA</h3>
+                            <p class="text-gray-400 text-sm mb-3">Explosive spicy flavor combo</p>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <span class="text-xl font-bold text-white">₹449</span>
+                                    <span class="text-gray-500 line-through ml-2">₹599</span>
+                                </div>
+                            </div>
+                            
+                            <button onclick="window.location.href='./product-detail.html'" class="btn-add-to-cart w-full">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Related Product 3 -->
+                <div class="scroll-reveal" style="animation-delay: 0.2s">
+                    <div class="glass-effect rounded-2xl overflow-hidden border border-white/10 hover:border-[#19dc7e]/30 transition-all duration-500 group h-full">
+                        <div class="relative image-zoom-dark h-48">
+                            <img src="../images/banana-crisp-bites.webp" alt="Milky Way Veggie Pack" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            
+                            <div class="absolute top-3 left-3">
+                                <span class="bg-yellow-500 text-black px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                                    BEST VALUE
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4">
+                            <h3 class="font-bold text-white text-lg mb-1">MILKY WAY VEGGIE PACK</h3>
+                            <p class="text-gray-400 text-sm mb-3">Colorful veggie assortment</p>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <span class="text-xl font-bold text-white">₹499</span>
+                                    <span class="text-gray-500 line-through ml-2">₹699</span>
+                                </div>
+                            </div>
+                            
+                            <button onclick="window.location.href='./product-detail.html'" class="btn-add-to-cart w-full">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Related Product 4 -->
+                <div class="scroll-reveal" style="animation-delay: 0.3s">
+                    <div class="glass-effect rounded-2xl overflow-hidden border border-white/10 hover:border-[#19dc7e]/30 transition-all duration-500 group h-full">
+                        <div class="relative image-zoom-dark h-48">
+                            <img src="../images/banana-crisp-bites.webp" alt="Quantum Mango Tango" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            
+                            <div class="absolute top-3 left-3">
+                                <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                                    NEW
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4">
+                            <h3 class="font-bold text-white text-lg mb-1">QUANTUM MANGO TANGO</h3>
+                            <p class="text-gray-400 text-sm mb-3">Multi-dimensional mango experience</p>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <span class="text-xl font-bold text-white">₹399</span>
+                                    <span class="text-gray-500 line-through ml-2">₹499</span>
+                                </div>
+                            </div>
+                            
+                            <button onclick="window.location.href='./product-detail.html'" class="btn-add-to-cart w-full">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute bottom-1/4 left-1/4 w-64 h-64 morphing-shape opacity-5"></div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="glass-effect rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto scroll-reveal">
+                <h2 class="title-font text-4xl md:text-5xl mb-6">
+                    READY FOR A <span class="text-[#19dc7e]">GALACTIC</span> SNACKING EXPERIENCE?
+                </h2>
+                <p class="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+                    Join thousands of cosmic snackers who have discovered the joy of guilt-free, 
+                    plant-powered crunch. Your taste buds will thank you!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="addToCart()" class="btn-cta-primary">
+                        <i class="fas fa-shopping-cart mr-2"></i>Add to Cart - ₹299
+                    </button>
+                    <button onclick="window.location.href='./shop.html'" class="btn-cta-secondary">
+                        <i class="fas fa-store mr-2"></i>Browse All Flavors
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ultimate Footer -->
+    <footer class="pt-12 pb-8 relative">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <img src="../singlelogo.png" alt="DRIYUM" class="mb-4" width="100"/>
+                    <p class="text-white/60 mb-6 max-w-md">
+                        Redefining snacking with plant-powered, Fruit Flavour Packed, 
+                        guilt-free crunch experiences.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="social-btn">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h4 class="font-bold mb-4 text-[#19dc7e]">EXPLORE</h4>
+                    <div class="space-y-2">
+                        <a href="shop.html" class="footer-link">Shop All</a>
+                        <a href="#" class="footer-link">New Arrivals</a>
+                        <a href="#" class="footer-link">Best Sellers</a>
+                        <a href="#" class="footer-link">Collections</a>
+                    </div>
+                </div>
+                
+                <!-- Company -->
+                <div>
+                    <h4 class="font-bold mb-4 text-[#FFD166]">COMPANY</h4>
+                    <div class="space-y-2">
+                        <a href="#" class="footer-link">Our Story</a>
+                        <a href="#" class="footer-link">Blog</a>
+                        <a href="#" class="footer-link">Careers</a>
+                        <a href="#" class="footer-link">Press</a>
+                    </div>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h4 class="font-bold mb-4 text-[#FF6B6B]">SUPPORT</h4>
+                    <div class="space-y-2">
+                        <a href="#" class="footer-link">FAQ</a>
+                        <a href="#" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link">Shipping</a>
+                        <a href="#" class="footer-link">Returns</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-white/40 text-sm mb-4 md:mb-0">
+                       <span>© <span id="currentYear"></span> DRIYUM. All rights reserved. </span> <a href="https://irfanamnzoor.in" class="text-white/40 hover:text-white text-sm" target="_blank">Developed by Irfan Manzoor</a>
+                    </div>
+                    <div class="flex gap-6">
+                        <a href="#" class="text-white/40 hover:text-white text-sm">Privacy</a>
+                        <a href="#" class="text-white/40 hover:text-white text-sm">Terms</a>
+                        <a href="#" class="text-white/40 hover:text-white text-sm">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Initialize particles
+            initParticles();
+            
+            // Initialize custom cursor
+            initCustomCursor();
+            
+            // Initialize scroll progress
+            initScrollProgress();
+            
+            // Initialize scroll animations
+            initScrollAnimations();
+            
+            // Initialize search
+            initSearch();
+            
+            // Initialize cart from localStorage
+            initCart();
+            
+            // Load initial reviews
+            loadReviews();
+            
+            // Initialize review stars
+            initReviewStars();
+            
+            // Initialize tabs
+            initTabs();
+            
+            // Initialize FAQ functionality
+            initFaq();
+            
+            // Initialize flavor selection
+            initFlavorSelection();
+            
+            // Initialize package size selection
+            initPackageSelection();
+        });
+        
+        // Initialize Tabs - FIXED VERSION
+        function initTabs() {
+            const tabButtons = document.querySelectorAll('.product-tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            // Add click event to all tab buttons
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Hide all tab contents
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                        content.style.display = 'none';
+                    });
+                    
+                    // Show selected tab
+                    const selectedTab = document.getElementById(`${tabId}-tab`);
+                    if (selectedTab) {
+                        selectedTab.style.display = 'block';
+                        setTimeout(() => {
+                            selectedTab.classList.add('active');
+                        }, 10);
+                        
+                        // Smooth scroll to tab section
+                        selectedTab.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            
+            // Show first tab by default
+            if (tabButtons.length > 0) {
+                tabButtons[0].click();
+            }
+        }
+        
+        // Initialize FAQ functionality
+        function initFaq() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.cursor-pointer');
+                const answer = item.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+                
+                question.addEventListener('click', function() {
+                    // Toggle current FAQ
+                    answer.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                    
+                    // Close other FAQs (optional - remove if you want multiple open)
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            const otherAnswer = otherItem.querySelector('.faq-answer');
+                            const otherIcon = otherItem.querySelector('.cursor-pointer i');
+                            otherAnswer.classList.add('hidden');
+                            otherIcon.classList.remove('rotate-180');
+                        }
+                    });
+                });
+            });
+        }
+        
+        // Product Detail Functions
+        function changeMainImage(src) {
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.gallery-nav');
+            
+            mainImage.src = src;
+            
+            thumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            
+            event.currentTarget.classList.add('active');
+        }
+        
+        // Quantity Functions
+        function changeQuantity(change) {
+            const quantityInput = document.getElementById('quantity');
+            let currentValue = parseInt(quantityInput.value);
+            currentValue += change;
+            
+            if (currentValue < 1) currentValue = 1;
+            if (currentValue > 10) currentValue = 10;
+            
+            quantityInput.value = currentValue;
+        }
+        
+        function updateQuantity(value) {
+            const quantityInput = document.getElementById('quantity');
+            let numValue = parseInt(value);
+            
+            if (isNaN(numValue) || numValue < 1) numValue = 1;
+            if (numValue > 10) numValue = 10;
+            
+            quantityInput.value = numValue;
+        }
+        
+        // Review Functions
+        let reviews = [
+            {
+                id: 1,
+                name: "Alex Johnson",
+                rating: 5,
+                title: "Absolutely Cosmic!",
+                text: "These banana chips are out of this world! The perfect crunch and amazing flavor. My new favorite snack!",
+                date: "2024-01-15",
+                verified: true
+            },
+            {
+                id: 2,
+                name: "Sam Wilson",
+                rating: 5,
+                title: "Best Snack Ever",
+                text: "I've tried many banana chips, but these are truly special. The seasoning is perfect and they're so addictive!",
+                date: "2024-01-10",
+                verified: true
+            },
+            {
+                id: 3,
+                name: "Taylor Swift",
+                rating: 4,
+                title: "Great for Office Snacking",
+                text: "Love having these at my desk. Healthy, tasty, and keeps me energized throughout the day.",
+                date: "2024-01-05",
+                verified: false
+            },
+            {
+                id: 4,
+                name: "Jordan Lee",
+                rating: 5,
+                title: "Kid Approved!",
+                text: "My kids won't stop eating these! Finally found a healthy snack they actually enjoy.",
+                date: "2023-12-28",
+                verified: true
+            },
+            {
+                id: 5,
+                name: "Rohit Sharma",
+                rating: 5,
+                title: "Perfect Crunch!",
+                text: "The texture is amazing - not too hard, not too soft. Just perfect crispy banana chips!",
+                date: "2024-01-20",
+                verified: true
+            }
+        ];
+        
+        let displayedReviews = 2;
+        
+        function loadReviews() {
+            const reviewsList = document.getElementById('reviewsList');
+            if (!reviewsList) return;
+            
+            reviewsList.innerHTML = '';
+            
+            // Sort reviews by date (newest first)
+            const sortedReviews = [...reviews].sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            for (let i = 0; i < Math.min(displayedReviews, sortedReviews.length); i++) {
+                const review = sortedReviews[i];
+                const reviewElement = document.createElement('div');
+                reviewElement.className = 'glass-effect rounded-2xl p-6 scroll-reveal';
+                reviewElement.style.animationDelay = `${i * 0.1}s`;
+                reviewElement.innerHTML = `
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h4 class="font-bold text-white mb-1">${review.title}</h4>
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <div class="flex text-[#FFD166]">
+                                    ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}
+                                </div>
+                                <span class="text-white/60">by ${review.name}</span>
+                                ${review.verified ? '<span class="text-xs bg-[#19dc7e]/20 text-[#19dc7e] px-2 py-1 rounded-full">Verified Purchase</span>' : ''}
+                            </div>
+                        </div>
+                        <span class="text-white/40 text-sm">${review.date}</span>
+                    </div>
+                    <p class="text-white/80">${review.text}</p>
+                    <div class="flex gap-4 mt-4">
+                        <button onclick="markReviewHelpful(${review.id})" class="text-sm text-white/60 hover:text-white transition-colors">
+                            <i class="fas fa-thumbs-up mr-1"></i> Helpful
+                        </button>
+                        <button onclick="reportReview(${review.id})" class="text-sm text-white/60 hover:text-white transition-colors">
+                            <i class="fas fa-flag mr-1"></i> Report
+                        </button>
+                    </div>
+                `;
+                reviewsList.appendChild(reviewElement);
+            }
+            
+            // Update scroll animations for new elements
+            initScrollAnimations();
+        }
+        
+        function markReviewHelpful(reviewId) {
+            showNotification('Thanks for your feedback!', 'success');
+        }
+        
+        function reportReview(reviewId) {
+            showNotification('Review reported. Our team will review it.', 'info');
+        }
+        
+        function loadMoreReviews() {
+            displayedReviews = Math.min(displayedReviews + 2, reviews.length);
+            loadReviews();
+            
+            if (displayedReviews >= reviews.length) {
+                event.target.style.display = 'none';
+            }
+        }
+        
+        function showReviewForm() {
+            const reviewForm = document.getElementById('reviewForm');
+            reviewForm.classList.remove('hidden');
+            reviewForm.scrollIntoView({ behavior: 'smooth' });
+            
+            // Add animation
+            reviewForm.classList.add('scroll-reveal');
+            setTimeout(() => {
+                reviewForm.classList.add('active');
+            }, 10);
+        }
+        
+        function hideReviewForm() {
+            document.getElementById('reviewForm').classList.add('hidden');
+        }
+        
+        function initReviewStars() {
+            const stars = document.querySelectorAll('.review-star');
+            stars.forEach(star => {
+                star.addEventListener('mouseover', function() {
+                    const rating = parseInt(this.getAttribute('data-rating'));
+                    highlightStars(rating);
+                });
+                
+                star.addEventListener('click', function() {
+                    const rating = parseInt(this.getAttribute('data-rating'));
+                    document.getElementById('selectedRating').value = rating;
+                    highlightStars(rating);
+                    updateStarIcons(rating);
+                });
+            });
+            
+            // Reset stars when mouse leaves container
+            document.getElementById('reviewStars').addEventListener('mouseleave', function() {
+                const currentRating = parseInt(document.getElementById('selectedRating').value);
+                if (currentRating > 0) {
+                    highlightStars(currentRating);
+                    updateStarIcons(currentRating);
+                } else {
+                    resetStars();
+                }
+            });
+        }
+        
+        function highlightStars(rating) {
+            const stars = document.querySelectorAll('.review-star');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('text-[#FFD166]');
+                } else {
+                    star.classList.remove('text-[#FFD166]');
+                }
+            });
+        }
+        
+        function updateStarIcons(rating) {
+            const stars = document.querySelectorAll('.review-star');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.remove('far');
+                    star.classList.add('fas');
+                } else {
+                    star.classList.remove('fas');
+                    star.classList.add('far');
+                }
+            });
+        }
+        
+        function resetStars() {
+            const stars = document.querySelectorAll('.review-star');
+            stars.forEach(star => {
+                star.classList.remove('text-[#FFD166]');
+                star.classList.remove('fas');
+                star.classList.add('far');
+            });
+        }
+        
+        function submitReview() {
+            const name = document.getElementById('reviewName').value.trim();
+            const title = document.getElementById('reviewTitle').value.trim();
+            const text = document.getElementById('reviewText').value.trim();
+            const rating = parseInt(document.getElementById('selectedRating').value);
+            
+            if (!name || !title || !text || rating === 0) {
+                showNotification('Please fill in all fields and select a rating', 'error');
+                return;
+            }
+            
+            const newReview = {
+                id: reviews.length + 1,
+                name: name,
+                rating: rating,
+                title: title,
+                text: text,
+                date: new Date().toISOString().split('T')[0],
+                verified: false
+            };
+            
+            reviews.unshift(newReview);
+            displayedReviews = Math.min(displayedReviews + 1, reviews.length);
+            loadReviews();
+            hideReviewForm();
+            
+            // Reset form
+            document.getElementById('reviewName').value = '';
+            document.getElementById('reviewTitle').value = '';
+            document.getElementById('reviewText').value = '';
+            document.getElementById('selectedRating').value = 0;
+            resetStars();
+            
+            showNotification('Thank you for your review!', 'success');
+        }
+        
+        // Product Action Functions
+        function addToCart() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            showNotification(`Added ${quantity} Galactic Banana Blast${quantity > 1 ? 's' : ''} to cart! 🚀`, 'success');
+            
+            // Update cart count
+            const cartCount = document.getElementById('cartCount');
+            let currentCount = parseInt(cartCount.textContent) || 0;
+            cartCount.textContent = currentCount + quantity;
+            
+            // Animate cart icon
+            cartCount.classList.add('animate-ping');
+            setTimeout(() => cartCount.classList.remove('animate-ping'), 500);
+        }
+        
+        function buyNow() {
+            addToCart();
+            openCart();
+        }
+        
+        function addToWishlist() {
+            showNotification('Added Galactic Banana Blast to wishlist! ❤️', 'success');
+        }
+        
+        function shareProduct() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Galactic Banana Blast - DRIYUM',
+                    text: 'Check out this amazing plant-based snack!',
+                    url: window.location.href,
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                navigator.clipboard.writeText(window.location.href);
+                showNotification('Link copied to clipboard!', 'success');
+            }
+        }
+        
+        // Flavor selection
+        function initFlavorSelection() {
+            document.querySelectorAll('.flavor-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.flavor-option').forEach(opt => {
+                        opt.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    const flavorName = this.querySelector('span').textContent;
+                    showNotification(`Selected flavor: ${flavorName}`, 'info');
+                });
+            });
+        }
+        
+        // Package size selection
+        function initPackageSelection() {
+            document.querySelectorAll('.flex-wrap.gap-3 button').forEach(button => {
+                button.addEventListener('click', function() {
+                    document.querySelectorAll('.flex-wrap.gap-3 button').forEach(btn => {
+                        btn.classList.remove('bg-[#19dc7e]', 'text-black');
+                        btn.classList.add('bg-white/10', 'text-white');
+                    });
+                    this.classList.remove('bg-white/10', 'text-white');
+                    this.classList.add('bg-[#19dc7e]', 'text-black');
+                    
+                    const packageInfo = this.textContent;
+                    showNotification(`Selected package: ${packageInfo}`, 'info');
+                });
+            });
+        }
+        
+        // Common Functions (from shop.html)
+        function initParticles() {
+            const particlesContainer = document.getElementById('particles');
+            if (!particlesContainer) return;
+            
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 8 + 4;
+                const posX = Math.random() * 100;
+                const duration = Math.random() * 30 + 20;
+                const delay = Math.random() * 5;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.opacity = Math.random() * 0.3 + 0.1;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        function initCustomCursor() {
+            const cursor = document.querySelector('.custom-cursor');
+            const dot = document.querySelector('.cursor-dot');
+            
+            if (!cursor || !dot) return;
+            
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                dot.style.left = e.clientX + 'px';
+                dot.style.top = e.clientY + 'px';
+            });
+            
+            document.querySelectorAll('button, a, .product-tab, .gallery-nav, .flavor-option').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.style.transform = 'scale(1.5)';
+                    cursor.style.background = 'rgba(25, 220, 126, 0.2)';
+                });
+                
+                el.addEventListener('mouseleave', () => {
+                    cursor.style.transform = 'scale(1)';
+                    cursor.style.background = 'transparent';
+                });
+            });
+        }
+        
+        function initScrollProgress() {
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                const progressBar = document.getElementById('progressBar');
+                if (progressBar) {
+                    progressBar.style.width = scrolled + '%';
+                }
+            });
+        }
+        
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            });
+            
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        function initSearch() {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        performSearch();
+                    }
+                });
+            }
+        }
+        
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!query) return;
+            
+            showNotification(`Searching for "${query}"...`, 'info');
+            closeSearch();
+        }
+        
+        function searchKeyword(keyword) {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.value = keyword;
+                performSearch();
+            }
+        }
+        
+        function initCart() {
+            const cart = JSON.parse(localStorage.getItem('driyumCart')) || [];
+            updateCartCount(cart);
+        }
+        
+        function updateCartCount(cart) {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const cartCount = document.getElementById('cartCount');
+            if (cartCount) {
+                cartCount.textContent = totalItems;
+            }
+        }
+        
+        // Modal Functions
+        function openSearch() {
+            const modal = document.getElementById('searchModal');
+            const content = document.getElementById('searchModalContent');
+            if (modal && content) {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    content.classList.remove('scale-95', 'opacity-0');
+                    document.getElementById('searchInput').focus();
+                }, 10);
+            }
+        }
+        
+        function closeSearch() {
+            const modal = document.getElementById('searchModal');
+            const content = document.getElementById('searchModalContent');
+            if (modal && content) {
+                content.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+        }
+        
+        function openCart() {
+            const cartSidebar = document.getElementById('cartSidebar');
+            if (cartSidebar) {
+                cartSidebar.classList.remove('translate-x-full');
+            }
+        }
+        
+        function closeCart() {
+            const cartSidebar = document.getElementById('cartSidebar');
+            if (cartSidebar) {
+                cartSidebar.classList.add('translate-x-full');
+            }
+        }
+        
+        // Mobile Menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (!mobileMenu) return;
+            
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenu.style.opacity = '1';
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.style.opacity = '0';
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+                document.body.style.overflow = '';
+            }
+        }
+        
+        function toggleMobileCategory() {
+            const categoryContent = document.querySelector('.mobile-category-content');
+            const categoryArrow = document.querySelector('.mobile-category-arrow');
+            
+            if (categoryContent && categoryArrow) {
+                categoryContent.classList.toggle('active');
+                categoryArrow.classList.toggle('active');
+            }
+        }
+        
+        // Account Menu
+        function toggleAccountMenu() {
+            const accountMenu = document.getElementById('accountMenu');
+            if (accountMenu) {
+                accountMenu.classList.toggle('opacity-0');
+                accountMenu.classList.toggle('invisible');
+                accountMenu.classList.toggle('translate-y-4');
+                accountMenu.classList.toggle('group-hover:translate-y-0');
+            }
+        }
+        
+        // Notification System
+        function showNotification(message, type = 'info') {
+            const container = document.getElementById('notificationContainer');
+            if (!container) return;
+            
+            const notification = document.createElement('div');
+            
+            notification.className = 'notification-dark p-4 rounded-lg shadow-xl max-w-sm transform translate-x-full';
+            notification.innerHTML = `
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-${type === 'success' ? 'check-circle text-[#19dc7e]' : type === 'error' ? 'exclamation-circle text-[#FF6B6B]' : 'info-circle text-[#FFD166]'}"></i>
+                    </div>
+                    <div class="ml-3 flex-1">
+                        <p class="text-sm font-medium text-white">${message}</p>
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove()" class="ml-4 flex-shrink-0">
+                        <i class="fas fa-times text-gray-400 hover:text-white"></i>
+                    </button>
+                </div>
+            `;
+            
+            container.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 10);
+            
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.style.opacity = '0';
+                    notification.style.transform = 'translateX(100%)';
+                    setTimeout(() => notification.remove(), 300);
+                }
+            }, 3000);
+        }
+        
+        // Announcement Bar
+        function closeAnnouncement() {
+            const announcementBar = document.querySelector('.announcement-bar');
+            if (announcementBar) {
+                announcementBar.remove();
+            }
+        }
+        
+        // Checkout functions
+        function checkout() {
+            showNotification('🚀 Redirecting to checkout...', 'info');
+        }
+        
+        function continueShopping() {
+            closeCart();
+        }
+        
+        // Close modals on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeSearch();
+                closeCart();
+                const mobileMenu = document.getElementById('mobileMenu');
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    toggleMobileMenu();
+                }
+                const accountMenu = document.getElementById('accountMenu');
+                if (accountMenu && !accountMenu.classList.contains('opacity-0')) {
+                    toggleAccountMenu();
+                }
+                hideReviewForm();
+            }
+        });
+    </script>
+</body>
+</html>
